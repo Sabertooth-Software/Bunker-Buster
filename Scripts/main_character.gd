@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+@export var shooting_speed: float = 10.0
 
 signal shoot(direction: Vector2)
 
@@ -11,7 +12,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot"):
-		shoot.emit(Vector2(1,0))
+		var direction: Vector2 = get_global_mouse_position() - global_position
+		print(direction)
+		var shooting_vector: Vector2 = direction.normalized() * shooting_speed
+		shoot.emit(shooting_vector)
 		
 
 func _physics_process(_delta):
