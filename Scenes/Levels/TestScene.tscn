@@ -1,11 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpv788hlou7c7"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="PackedScene" uid="uid://d1hu3wc8ssi87" path="res://Scenes/Levels/MainCharacter.tscn" id="1_q8o58"]
+[ext_resource type="PackedScene" uid="uid://d1hu3wc8ssi87" path="res://Scenes/Characters/MainCharacter.tscn" id="1_q8o58"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(574.25, 324.25)
-scale = Vector2(1149.5, 649.5)
-
 [node name="MainCharacter" parent="." instance=ExtResource("1_q8o58")]
+
+[connection signal="shoot" from="MainCharacter" to="MainCharacter/ShootingComponent" method="shoot" flags=18]
