@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://518cy663w7yg"]
+[gd_scene load_steps=6 format=3 uid="uid://5xyr3ofvdwls"]
 
-[ext_resource type="Script" path="res://Scripts/main_character.gd" id="1_4cx1i"]
-[ext_resource type="PackedScene" uid="uid://bapxsumutqx30" path="res://Scenes/Components/shooting_component.tscn" id="2_1hq3u"]
-[ext_resource type="PackedScene" uid="uid://ctjoiwafolw22" path="res://Scenes/bullet.tscn" id="3_bokjs"]
+[ext_resource type="Script" path="res://Scripts/MainCharacter.gd" id="1_ed0ye"]
+[ext_resource type="PackedScene" uid="uid://dhm8qd71af8hh" path="res://Scenes/Components/shooting_component.tscn" id="2_1hq3u"]
+[ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/bullet.tscn" id="3_bokjs"]
 [ext_resource type="Texture2D" uid="uid://vd7ap2v7wpfb" path="res://icon.svg" id="4_nunnb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sin31"]
@@ -10,7 +10,7 @@ size = Vector2(0.0262352, 0.0526724)
 
 [node name="MainCharacter" type="CharacterBody2D"]
 scale = Vector2(1143.5, 645.5)
-script = ExtResource("1_4cx1i")
+script = ExtResource("1_ed0ye")
 shooting_speed = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

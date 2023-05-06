@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctjoiwafolw22"]
+[gd_scene load_steps=5 format=3 uid="uid://bfc7fafn5cbnj"]
 
-[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_qvi5r"]
+[ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_6j12e"]
 [ext_resource type="PackedScene" uid="uid://chd4eaqqfu7pv" path="res://Scenes/flame_trail.tscn" id="2_qjgw2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_72ywd"]
@@ -14,7 +14,7 @@ height = 28.732
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 2.66454e-15
-script = ExtResource("1_qvi5r")
+script = ExtResource("1_6j12e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_72ywd")
