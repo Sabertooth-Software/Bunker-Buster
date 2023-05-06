@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctrkm21y13w8v"]
+[gd_scene load_steps=4 format=3 uid="uid://ctjoiwafolw22"]
 
-[ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_it0s0"]
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_qvi5r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_72ywd"]
 radius = 1.0
@@ -13,7 +13,7 @@ height = 2.0
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 2.66454e-15
-script = ExtResource("1_it0s0")
+script = ExtResource("1_qvi5r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_72ywd")

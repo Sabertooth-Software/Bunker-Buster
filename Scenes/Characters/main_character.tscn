@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1hu3wc8ssi87"]
+[gd_scene load_steps=7 format=3 uid="uid://518cy663w7yg"]
 
-[ext_resource type="Script" path="res://Scripts/MainCharacter.gd" id="1_naua5"]
-[ext_resource type="PackedScene" uid="uid://c231r3clbqqxa" path="res://Scenes/Components/shooting_component.tscn" id="2_ydfpy"]
-[ext_resource type="PackedScene" uid="uid://ctrkm21y13w8v" path="res://Scenes/Bullet.tscn" id="3_l0mrs"]
+[ext_resource type="Script" path="res://Scripts/main_character.gd" id="1_4cx1i"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/shooting_component.tscn" id="2_1hq3u"]
+[ext_resource type="PackedScene" uid="uid://ctjoiwafolw22" path="res://Scenes/bullet.tscn" id="3_bokjs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sin31"]
 size = Vector2(0.0262352, 0.0526724)
@@ -16,7 +16,7 @@ material = SubResource("StandardMaterial3D_8552u")
 [node name="MainCharacter" type="CharacterBody2D"]
 position = Vector2(571.25, 322.25)
 scale = Vector2(1143.5, 645.5)
-script = ExtResource("1_naua5")
+script = ExtResource("1_4cx1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.421732, -0.347405)
@@ -27,5 +27,5 @@ position = Vector2(-0.421076, -0.349342)
 scale = Vector2(0.026, 0.05)
 mesh = SubResource("BoxMesh_yfupp")
 
-[node name="ShootingComponent" parent="." instance=ExtResource("2_ydfpy")]
-bullet = ExtResource("3_l0mrs")
+[node name="ShootingComponent" parent="." instance=ExtResource("2_1hq3u")]
+bullet = ExtResource("3_bokjs")
