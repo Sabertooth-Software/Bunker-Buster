@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bxnnlrtblsl6k"]
+
+[ext_resource type="Shader" path="res://Shaders/water.gdshader" id="1_llitd"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bg4j2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c1igq"]
+seamless = true
+noise = SubResource("FastNoiseLite_bg4j2")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_e3vxy"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sutnj"]
+seamless = true
+noise = SubResource("FastNoiseLite_e3vxy")
+
+[resource]
+resource_name = "WaterShader"
+shader = ExtResource("1_llitd")
+shader_parameter/scroll1 = Vector2(0.05, 0.05)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strength = 0.2
+shader_parameter/tone_color = Color(0, 0.615686, 0.945098, 1)
+shader_parameter/top_color = Color(0.698039, 0.698039, 0.698039, 1)
+shader_parameter/light_start = 0.427
+shader_parameter/light_end = 0.806
+shader_parameter/noise1 = SubResource("NoiseTexture2D_c1igq")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_sutnj")
