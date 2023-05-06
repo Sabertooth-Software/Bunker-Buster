@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://d3m4yv0gycnsm"]
+
+[ext_resource type="Shader" path="res://Shaders/Elemental/fire.gdshader" id="1_t5l42"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w3eia"]
+noise_type = 0
+seed = -1
+frequency = 0.006
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_t2wii"]
+seamless = true
+noise = SubResource("FastNoiseLite_w3eia")
+
+[sub_resource type="Gradient" id="Gradient_xd4mf"]
+offsets = PackedFloat32Array(0, 0.160839, 0.482517, 0.667832, 0.723776)
+colors = PackedColorArray(0, 0, 0, 1, 0.945098, 0.00784314, 0.00392157, 1, 0.945098, 0.878431, 0.00392157, 1, 0.930363, 0.977459, 0.486183, 1, 0.927329, 0.954739, 0.776893, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o5sn5"]
+gradient = SubResource("Gradient_xd4mf")
+
+[resource]
+shader = ExtResource("1_t5l42")
+shader_parameter/scroll = Vector2(0.5, 0.6)
+shader_parameter/scroll2 = Vector2(0.3, 0.3)
+shader_parameter/blur = 2.899
+shader_parameter/base_intensity = 0.087
+shader_parameter/intensity_factor = 1.5
+shader_parameter/NOISE_PATTERN = SubResource("NoiseTexture2D_t2wii")
+shader_parameter/TONE_MAPPING = SubResource("GradientTexture2D_o5sn5")
