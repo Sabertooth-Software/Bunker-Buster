@@ -11,6 +11,7 @@ size = Vector2(0.0262352, 0.0526724)
 [node name="MainCharacter" type="CharacterBody2D"]
 scale = Vector2(1143.5, 645.5)
 script = ExtResource("1_4cx1i")
+shooting_speed = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sin31")

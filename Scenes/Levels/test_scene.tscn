@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkmco6kbeev5"]
+[gd_scene load_steps=3 format=3 uid="uid://dkmco6kbeev5"]
 
 [ext_resource type="PackedScene" uid="uid://518cy663w7yg" path="res://Scenes/Characters/main_character.tscn" id="1_q8o58"]
 [ext_resource type="Texture2D" uid="uid://vd7ap2v7wpfb" path="res://icon.svg" id="2_fwsmc"]
-[ext_resource type="Material" uid="uid://begyosijrrrhn" path="res://Shaders/Elemental/water.tres" id="3_2xhd8"]
-[ext_resource type="Material" uid="uid://d3m4yv0gycnsm" path="res://Shaders/Elemental/fire.tres" id="3_42uta"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,22 +9,12 @@
 z_index = 1
 scale = Vector2(1, 1)
 
+[node name="Camera2D" type="Camera2D" parent="MainCharacter"]
+zoom = Vector2(0.5, 0.5)
+
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(618, 401)
 scale = Vector2(10.375, 7.35938)
-texture = ExtResource("2_fwsmc")
-
-[node name="fire" type="Sprite2D" parent="."]
-z_index = 1
-material = ExtResource("3_42uta")
-position = Vector2(747.125, 286.312)
-scale = Vector2(2.04492, 1.91699)
-texture = ExtResource("2_fwsmc")
-
-[node name="water" type="Sprite2D" parent="."]
-material = ExtResource("3_2xhd8")
-position = Vector2(250.499, 168.5)
-scale = Vector2(4.38282, 3.75781)
 texture = ExtResource("2_fwsmc")
 
 [connection signal="shoot" from="MainCharacter" to="MainCharacter/ShootingComponent" method="shoot" flags=18]
