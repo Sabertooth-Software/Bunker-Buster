@@ -7,8 +7,8 @@
 radius = 3.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_plxgq"]
-radius = 15.356
-height = 28.732
+radius = 1.0
+height = 2.0
 
 [node name="Bullet" type="RigidBody2D"]
 collision_layer = 0

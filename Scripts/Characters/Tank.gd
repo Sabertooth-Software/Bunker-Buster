@@ -10,6 +10,7 @@ class_name Tank
 @onready var shooting_component: ShootingComponent = $ShootingComponent
 
 func move(direction: Vector2):
+	print_debug("Tank: ", global_position)
 	if direction:
 		velocity = direction * Speed
 	else:

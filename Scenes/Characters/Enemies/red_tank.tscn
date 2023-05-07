@@ -1,17 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://hh271eak8f3q"]
+[gd_scene load_steps=4 format=3 uid="uid://hh271eak8f3q"]
 
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="1_8d7b4"]
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyTank.gd" id="1_hmcf7"]
+[ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/bullet.tscn" id="3_6ux1k"]
 
-[node name="RedTank" type="Node2D"]
+[node name="RedTank" instance=ExtResource("1_8d7b4")]
 script = ExtResource("1_hmcf7")
+bullet = ExtResource("3_6ux1k")
+timeout = 1.5
+Speed = 10.0
+Bullet_Speed = 1.0
 
-[node name="Tank" parent="." instance=ExtResource("1_8d7b4")]
-Speed = 1000.0
-Bullet_Speed = 10.0
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.612
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Timer" type="Timer" parent="." index="4"]
