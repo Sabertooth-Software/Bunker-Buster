@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1bmgxhovsg3o"]
+
+[ext_resource type="Texture2D" uid="uid://vd7ap2v7wpfb" path="res://icon.svg" id="1_y5cr8"]
+
+[sub_resource type="GDScript" id="GDScript_5tgen"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+
+
+func _physics_process(delta):
+	
+
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61cwc"]
+
+[node name="enemy_tank" type="CharacterBody2D"]
+script = SubResource("GDScript_5tgen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_61cwc")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("1_y5cr8")
+
+[node name="Canon" type="Sprite2D" parent="Body"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_y5cr8")

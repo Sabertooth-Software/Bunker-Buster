@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://de7u1pjr1qpnv"]
+
+[ext_resource type="PackedScene" uid="uid://5xyr3ofvdwls" path="res://Scenes/Characters/tank.tscn" id="1_4s5ma"]
+[ext_resource type="Script" path="res://Scripts/MainCharacter.gd" id="1_i2dah"]
+[ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/bullet.tscn" id="2_xnnvu"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_i2dah")
+bullet = ExtResource("2_xnnvu")
+
+[node name="Tank" parent="." instance=ExtResource("1_4s5ma")]
+Speed = 500.0
+
+[node name="Camera2D" type="Camera2D" parent="Tank"]
+zoom = Vector2(0.5, 0.5)
