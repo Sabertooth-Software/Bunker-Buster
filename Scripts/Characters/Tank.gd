@@ -12,7 +12,7 @@ class_name Tank
 func move(direction: Vector2):
 	if direction:
 		velocity = direction * Speed
-		transform.x
+		global_transform = direction
 	else:
 		velocity = Vector2.ZERO
 	
@@ -24,4 +24,3 @@ func shoot(direction: Vector2, bullet: PackedScene):
 	
 func look(point: Vector2):
 	canon.look_at(point)
-
