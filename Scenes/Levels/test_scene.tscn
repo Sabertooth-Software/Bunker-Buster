@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cv4by386l1n8j"]
 
 [ext_resource type="Texture2D" uid="uid://vd7ap2v7wpfb" path="res://icon.svg" id="2_fwsmc"]
-[ext_resource type="PackedScene" uid="uid://de7u1pjr1qpnv" path="res://Scenes/Characters/player.tscn" id="2_lwngh"]
-[ext_resource type="PackedScene" uid="uid://b1bmgxhovsg3o" path="res://Scenes/Characters/Enemies/red_tank.tscn" id="3_hgk18"]
+[ext_resource type="PackedScene" path="res://Scenes/Characters/player.tscn" id="2_lwngh"]
+[ext_resource type="PackedScene" path="res://Scenes/Characters/Enemies/red_tank.tscn" id="3_hgk18"]
 [ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/bullet.tscn" id="4_7rqdr"]
 
 [node name="Node2D" type="Node2D"]

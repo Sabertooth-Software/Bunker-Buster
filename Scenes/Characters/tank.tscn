@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://5xyr3ofvdwls"]
+[gd_scene load_steps=6 format=3 uid="uid://dfp2wtw5do8m7"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Tank.gd" id="1_lnctx"]
 [ext_resource type="PackedScene" uid="uid://dhm8qd71af8hh" path="res://Scenes/Components/shooting_component.tscn" id="2_1hq3u"]
@@ -11,8 +11,6 @@ size = Vector2(0.0262352, 0.0526724)
 
 [node name="Tank" type="CharacterBody2D"]
 script = ExtResource("1_lnctx")
-Speed = null
-Bullet_Speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sin31")

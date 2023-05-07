@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1bmgxhovsg3o"]
+[gd_scene load_steps=3 format=3 uid="uid://hh271eak8f3q"]
 
-[ext_resource type="PackedScene" uid="uid://5xyr3ofvdwls" path="res://Scenes/Characters/tank.tscn" id="1_8d7b4"]
+[ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="1_8d7b4"]
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyTank.gd" id="1_hmcf7"]
 
 [node name="RedTank" type="Node2D"]
 script = ExtResource("1_hmcf7")
 
 [node name="Tank" parent="." instance=ExtResource("1_8d7b4")]
-Speed = null
-Bullet_Speed = null
+Speed = 1000.0
+Bullet_Speed = 10.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.612

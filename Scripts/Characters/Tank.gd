@@ -12,7 +12,6 @@ class_name Tank
 func move(direction: Vector2):
 	if direction:
 		velocity = direction * Speed
-		global_transform = direction
 	else:
 		velocity = Vector2.ZERO
 	

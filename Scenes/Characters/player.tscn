@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://de7u1pjr1qpnv"]
+[gd_scene load_steps=4 format=3 uid="uid://cx8bibels1agv"]
 
-[ext_resource type="PackedScene" uid="uid://5xyr3ofvdwls" path="res://Scenes/Characters/tank.tscn" id="1_4s5ma"]
+[ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="1_4s5ma"]
 [ext_resource type="Script" path="res://Scripts/MainCharacter.gd" id="1_i2dah"]
 [ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/bullet.tscn" id="2_xnnvu"]
 
@@ -10,7 +10,7 @@ bullet = ExtResource("2_xnnvu")
 
 [node name="Tank" parent="." instance=ExtResource("1_4s5ma")]
 Speed = 500.0
-Bullet_Speed = null
+Bullet_Speed = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="Tank"]
 zoom = Vector2(0.5, 0.5)
