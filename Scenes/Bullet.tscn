@@ -12,8 +12,11 @@ height = 2.0
 
 [node name="Bullet" type="RigidBody2D"]
 collision_layer = 256
-collision_mask = 19
+collision_mask = 257
 gravity_scale = 2.66454e-15
+continuous_cd = 1
+max_contacts_reported = 5
+contact_monitor = true
 script = ExtResource("1_6j12e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

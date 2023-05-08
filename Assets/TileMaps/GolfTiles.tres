@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://c6cyh055mrm6s"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://c6cyh055mrm6s"]
 
 [ext_resource type="Texture2D" uid="uid://dcomdslc1rlho" path="res://Assets/Golf Tiles.png" id="1_jsqhq"]
 
@@ -7,6 +7,9 @@ tile_data = PackedInt32Array(0, 65537, 0, 65536, 131073, 0, 131072, 196609, 0, 1
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_soyfk"]
 tile_data = PackedInt32Array(0, 262145, 4, 65536, 327681, 4, 1, 65537, 4, 65537, 1, 4, 2, 65537, 5, 65538, 1, 5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uxpqv"]
+bounce = 0.3
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wnhja"]
 texture = ExtResource("1_jsqhq")
@@ -302,6 +305,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 50
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_uxpqv")
 physics_layer_1/collision_layer = 64
 physics_layer_1/collision_mask = 50
 physics_layer_2/collision_layer = 128

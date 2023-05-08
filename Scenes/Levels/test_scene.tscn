@@ -12,6 +12,8 @@ scale = Vector2(10.375, 7.35938)
 texture = ExtResource("2_fwsmc")
 
 [node name="RedTank" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_hgk18")]
+collision_layer = 1
+collision_mask = 1
 target = NodePath("")
 
 [node name="Tank" parent="." instance=ExtResource("2_lwngh")]
