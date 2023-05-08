@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="1_7d4p6"]
 [ext_resource type="Script" path="res://Scripts/MainCharacter.gd" id="1_yis1o"]
-[ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/bullet.tscn" id="2_47anu"]
+[ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/Bullet.tscn" id="2_47anu"]
 
 [node name="PlayerTank" instance=ExtResource("1_7d4p6")]
+collision_layer = 2
+collision_mask = 373
 script = ExtResource("1_yis1o")
 bullet = ExtResource("2_47anu")
 Speed = 70.0
