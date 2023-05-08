@@ -1,156 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://0ir1y88pwnh6"]
+[gd_scene load_steps=7 format=3 uid="uid://0ir1y88pwnh6"]
 
-[ext_resource type="Texture2D" uid="uid://dcomdslc1rlho" path="res://Assets/Golf Tiles.png" id="1_a3sag"]
+[ext_resource type="TileSet" uid="uid://c6cyh055mrm6s" path="res://Assets/TileMaps/GolfTiles.tres" id="1_7283g"]
 [ext_resource type="PackedScene" uid="uid://hh271eak8f3q" path="res://Scenes/Characters/Enemies/red_tank.tscn" id="3_h7ayj"]
 [ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/bullet.tscn" id="4_hwr6n"]
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="5_7ivjl"]
 [ext_resource type="Script" path="res://Scripts/MainCharacter.gd" id="5_kn0xc"]
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_n1qdb"]
-tile_data = PackedInt32Array(0, 65537, 0, 65536, 131073, 0, 131072, 196609, 0, 1, 131073, 0, 65537, 131073, 0, 131073, 131073, 0, 2, 1, 0, 65538, 131073, 0, 131074, 262145, 0)
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_soyfk"]
-tile_data = PackedInt32Array(0, 262145, 4, 65536, 327681, 4, 1, 65537, 4, 65537, 1, 4, 2, 65537, 5, 65538, 1, 5)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wnhja"]
-texture = ExtResource("1_a3sag")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, 16, -16, 16)
-0:1/0 = 0
-0:1/0/terrain_set = 0
-0:1/0/terrain = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0 = 0
-1:1/0/terrain_set = 0
-1:1/0/terrain = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
-2:1/0 = 0
-2:1/0/terrain_set = 0
-2:1/0/terrain = 0
-2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:1/0/physics_layer_0/angular_velocity = 0.0
-0:2/0 = 0
-0:2/0/terrain_set = 0
-0:2/0/terrain = 0
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
-1:2/0 = 0
-1:2/0/terrain_set = 0
-1:2/0/terrain = 0
-1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:2/0/physics_layer_0/angular_velocity = 0.0
-2:2/0 = 0
-2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:2/0/physics_layer_0/angular_velocity = 0.0
-1:3/0 = 0
-1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:3/0/physics_layer_0/angular_velocity = 0.0
-2:3/0 = 0
-2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:3/0/physics_layer_0/angular_velocity = 0.0
-3:0/0 = 0
-3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16)
-3:1/0 = 0
-3:1/0/terrain_set = 0
-3:1/0/terrain = 0
-3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:1/0/physics_layer_0/angular_velocity = 0.0
-3:3/0 = 0
-3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:3/0/physics_layer_0/angular_velocity = 0.0
-4:3/0 = 0
-4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:3/0/physics_layer_0/angular_velocity = 0.0
-0:3/0 = 0
-0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:3/0/physics_layer_0/angular_velocity = 0.0
-4:1/0 = 0
-4:1/0/terrain_set = 0
-4:1/0/terrain = 0
-4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:1/0/physics_layer_0/angular_velocity = 0.0
-4:0/0 = 0
-4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, -16, 16)
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16)
-2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-5:1/0 = 0
-5:1/0/terrain_set = 0
-5:1/0/terrain = 0
-5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:1/0/physics_layer_0/angular_velocity = 0.0
-5:0/0 = 0
-5:0/0/terrain_set = 0
-5:0/0/terrain = 0
-5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:0/0/physics_layer_0/angular_velocity = 0.0
-3:2/0 = 0
-3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:2/0/physics_layer_0/angular_velocity = 0.0
-4:2/0 = 0
-4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:2/0/physics_layer_0/angular_velocity = 0.0
-5:2/0 = 0
-5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:2/0/physics_layer_0/angular_velocity = 0.0
-5:3/0 = 0
-5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:3/0/physics_layer_0/angular_velocity = 0.0
-5:4/0 = 0
-5:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:4/0/physics_layer_0/angular_velocity = 0.0
-4:4/0 = 0
-4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:4/0/physics_layer_0/angular_velocity = 0.0
-3:4/0 = 0
-3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:4/0/physics_layer_0/angular_velocity = 0.0
-2:4/0 = 0
-2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:4/0/physics_layer_0/angular_velocity = 0.0
-1:4/0 = 0
-1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:4/0/physics_layer_0/angular_velocity = 0.0
-0:4/0 = 0
-0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:4/0/physics_layer_0/angular_velocity = 0.0
-0:5/0 = 0
-0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:5/0/physics_layer_0/angular_velocity = 0.0
-1:5/0 = 0
-1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:5/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSet" id="TileSet_t2xc0"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
-terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Terrain 0"
-terrain_set_0/terrain_0/color = Color(0.501961, 0.345098, 0.25098, 1)
-sources/1 = SubResource("TileSetAtlasSource_wnhja")
-pattern_0 = SubResource("TileMapPattern_n1qdb")
-pattern_1 = SubResource("TileMapPattern_soyfk")
+[ext_resource type="PackedScene" uid="uid://7sckx3547nbi" path="res://Scenes/Objects/golf_ball.tscn" id="6_5fmxu"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="GolfTiles" type="TileMap" parent="."]
 position = Vector2(6, 13)
 rotation = -0.00131922
-tile_set = SubResource("TileSet_t2xc0")
+tile_set = ExtResource("1_7283g")
 format = 2
 layer_0/name = "Green"
 layer_0/tile_data = PackedInt32Array(327681, 131073, 2, 327682, 131073, 2, 327683, 131073, 2, 327684, 131073, 2, 327685, 131073, 2, 262148, 131073, 2, 262147, 131073, 2, 262146, 131073, 2, 262145, 131073, 2, 262144, 131073, 2, 262149, 131073, 2, 262150, 131073, 2, 262151, 131073, 2, 327686, 131073, 2, 327680, 131073, 2, 393216, 131073, 2, 458752, 131073, 2, 524288, 131073, 2, 589824, 131073, 2, 589825, 131073, 2, 589826, 131073, 2, 589827, 131073, 2, 589828, 131073, 2, 589829, 131073, 2, 589830, 131073, 2, 589831, 131073, 2, 393218, 131073, 2, 458754, 131073, 2, 524290, 131073, 2, 458753, 131073, 2, 393217, 131073, 2, 524289, 131073, 2, 393219, 131073, 2, 393220, 131073, 2, 458756, 131073, 2, 524292, 131073, 2, 524293, 131073, 2, 458757, 131073, 2, 458758, 131073, 2, 393222, 131073, 2, 393223, 131073, 2, 393224, 131073, 2, 327688, 131073, 2, 327687, 131073, 2, 262152, 131073, 2, 262153, 131073, 2, 458760, 131073, 2, 458761, 131073, 2, 524296, 131073, 2, 524295, 131073, 2, 524294, 131073, 2, 458759, 131073, 2, 393221, 131073, 2, 524291, 131073, 2, 458755, 131073, 2, 327679, 131073, 2, 393215, 131073, 2, 458751, 131073, 2, 524287, 131073, 2, 589823, 131073, 2, 655359, 131073, 2, 655358, 131073, 2, 655357, 131073, 2, 655356, 131073, 2, 589820, 131073, 2, 524284, 131073, 2, 458748, 131073, 2, 393212, 131073, 2, 327676, 131073, 2, 327677, 131073, 2, 327678, 131073, 2, 393214, 131073, 2, 458750, 131073, 2, 524286, 131073, 2, 524285, 131073, 2, 589821, 131073, 2, 458749, 131073, 2, 393213, 131073, 2, 589822, 131073, 2, 589832, 131073, 2, 589833, 131073, 2, 589834, 131073, 2, 524298, 131073, 2, 458762, 131073, 2, 393225, 131073, 2, 327689, 131073, 2, 524297, 131073, 2, 262154, 131073, 2, 327690, 131073, 2, 393226, 131073, 2, 655370, 131073, 2, 655369, 131073, 2, 655368, 131073, 2, 655367, 131073, 2, 655366, 131073, 2, 655365, 131073, 2, 655364, 131073, 2, 655363, 131073, 2, 655362, 131073, 2, 655361, 131073, 2, 655360, 131073, 2, 720895, 131073, 2, 720894, 131073, 2, 720893, 131073, 2, 720892, 131073, 2, 720891, 131073, 2, 720890, 131073, 2, 720889, 131073, 2, 720888, 131073, 2, 720887, 131073, 2, 720886, 131073, 2, 720885, 131073, 2, 720884, 131073, 2, 655348, 131073, 2, 589812, 131073, 2, 524276, 131073, 2, 458740, 131073, 2, 458741, 131073, 2, 393206, 131073, 2, 327670, 131073, 2, 327671, 131073, 2, 327672, 131073, 2, 327673, 131073, 2, 327674, 131073, 2, 327675, 131073, 2, 393211, 131073, 2, 458747, 131073, 2, 524283, 131073, 2, 589819, 131073, 2, 589818, 131073, 2, 655353, 131073, 2, 655352, 131073, 2, 655351, 131073, 2, 655350, 131073, 2, 655349, 131073, 2, 655354, 131073, 2, 655355, 131073, 2, 589817, 131073, 2, 524281, 131073, 2, 524280, 131073, 2, 524279, 262145, 3, 589814, 131073, 2, 589813, 131073, 2, 524277, 131073, 2, 524278, 131073, 2, 458742, 131073, 2, 589815, 131073, 2, 458743, 131073, 2, 458744, 131073, 2, 393208, 131073, 2, 589816, 131073, 2, 458745, 131073, 2, 458746, 131073, 2, 393210, 131073, 2, 524282, 131073, 2, 393209, 131073, 2, 393207, 131073, 2, 393204, 131073, 2, 327668, 131073, 2, 327669, 131073, 2, 393205, 131073, 2)
@@ -195,3 +57,7 @@ Bullet_Speed = 1.0
 [node name="RedTank" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_h7ayj")]
 position = Vector2(-75, 208)
 target = NodePath("")
+
+[node name="GolfBall" parent="." instance=ExtResource("6_5fmxu")]
+top_level = true
+position = Vector2(217, 244)

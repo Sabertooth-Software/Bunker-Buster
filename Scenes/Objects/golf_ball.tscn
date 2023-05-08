@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://7sckx3547nbi"]
+
+[ext_resource type="Texture2D" uid="uid://du2t4ebdidyeu" path="res://Assets/GolfBall.png" id="1_gpgr6"]
+[ext_resource type="Script" path="res://Scripts/Objects/golf_ball.gd" id="1_ka2a0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yno2n"]
+radius = 41.2689
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u648x"]
+radius = 8.75
+
+[node name="GolfBall" type="RigidBody2D"]
+gravity_scale = 2.66454e-15
+script = ExtResource("1_ka2a0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gpgr6")
+
+[node name="GrabRange" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabRange"]
+shape = SubResource("CircleShape2D_yno2n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u648x")
