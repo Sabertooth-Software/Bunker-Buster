@@ -10,3 +10,4 @@ func setup(_position: Vector2, _velocity: Vector2, _scene: Node):
 	_scene.add_child(self)     
 	global_position = _position     
 	velocity = _velocity
+
