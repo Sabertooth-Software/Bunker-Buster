@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvufyljxww4mm"]
+[gd_scene load_steps=4 format=3 uid="uid://dvufyljxww4mm"]
 
 [ext_resource type="Texture2D" uid="uid://vd7ap2v7wpfb" path="res://icon.svg" id="2_fwsmc"]
 [ext_resource type="PackedScene" uid="uid://dnsf6b0b0kg12" path="res://Scenes/Characters/player_tank.tscn" id="2_lwngh"]
 [ext_resource type="PackedScene" uid="uid://hh271eak8f3q" path="res://Scenes/Characters/Enemies/red_tank.tscn" id="3_hgk18"]
-[ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/bullet.tscn" id="4_7rqdr"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,7 +12,6 @@ scale = Vector2(10.375, 7.35938)
 texture = ExtResource("2_fwsmc")
 
 [node name="RedTank" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_hgk18")]
-bullet = ExtResource("4_7rqdr")
 target = NodePath("")
 
 [node name="Tank" parent="." instance=ExtResource("2_lwngh")]
