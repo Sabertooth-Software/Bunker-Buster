@@ -11,7 +11,6 @@ func _process(_delta):
 
 func _physics_process(_delta):
 	super.look(get_global_mouse_position())
-	
 	var moving_vector: Vector2 = Input.get_vector("left", "right", "up", "down")
 	if moving_vector:
 		super.move(moving_vector)

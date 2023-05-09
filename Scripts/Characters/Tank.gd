@@ -19,7 +19,7 @@ func move(direction: Vector2):
 	
 func shoot(direction: Vector2, bullet: PackedScene):
 	var shooting_vector: Vector2 = direction.normalized() * Bullet_Speed
-	shooting_component.shoot(shooting_vector, bullet)
+	shooting_component.shoot(shooting_vector, bullet, self)
 	
 func look(point: Vector2):
 	canon.look_at(point)

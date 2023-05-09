@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/Bullet.tscn" id="3_6ux1k"]
 
 [node name="RedTank" instance=ExtResource("1_8d7b4")]
+collision_layer = 8
+collision_mask = 283
 script = ExtResource("1_hmcf7")
 bullet = ExtResource("3_6ux1k")
 timeout = 1.5
