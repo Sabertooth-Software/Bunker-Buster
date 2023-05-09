@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://7sckx3547nbi"]
+[gd_scene load_steps=7 format=3 uid="uid://7sckx3547nbi"]
 
 [ext_resource type="Texture2D" uid="uid://du2t4ebdidyeu" path="res://Assets/GolfBall.png" id="1_gpgr6"]
 [ext_resource type="Script" path="res://Scripts/Objects/golf_ball.gd" id="1_ka2a0"]
+[ext_resource type="Script" path="res://Scripts/Components/TerrainDetector.gd" id="3_ljw5e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yno2n"]
 radius = 41.2689
@@ -9,9 +10,10 @@ radius = 41.2689
 [sub_resource type="CircleShape2D" id="CircleShape2D_u648x"]
 radius = 8.75
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvt2o"]
+
 [node name="GolfBall" type="RigidBody2D"]
-collision_layer = 32
-collision_mask = 17
+collision_layer = 16
 gravity_scale = 2.66454e-15
 continuous_cd = 1
 script = ExtResource("1_ka2a0")
@@ -20,10 +22,19 @@ script = ExtResource("1_ka2a0")
 texture = ExtResource("1_gpgr6")
 
 [node name="GrabRange" type="Area2D" parent="."]
-collision_layer = 8
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabRange"]
 shape = SubResource("CircleShape2D_yno2n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_u648x")
+
+[node name="TerrainDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("3_ljw5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerrainDetector"]
+shape = SubResource("CircleShape2D_tvt2o")

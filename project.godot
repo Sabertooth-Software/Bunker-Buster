@@ -56,13 +56,10 @@ putt={
 
 2d_physics/layer_1="Walls"
 2d_physics/layer_2="Player"
-2d_physics/layer_3="Water"
-2d_physics/layer_4="Interactive"
-2d_physics/layer_5="Enemy"
-2d_physics/layer_6="Ball"
-2d_physics/layer_7="Sand"
-2d_physics/layer_8="Rough"
-2d_physics/layer_9="Projectile"
+2d_physics/layer_3="Interactive"
+2d_physics/layer_4="Enemy"
+2d_physics/layer_5="Projectile"
+2d_physics/layer_6="Terrain"
 
 [rendering]
 
