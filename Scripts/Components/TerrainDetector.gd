@@ -23,7 +23,7 @@ func process_tilemap(body: TileMap, body_rid: RID):
 	var new_terrain: Terrain.Type = tile_data.get_custom_data("terrain_type")
 	if new_terrain and new_terrain != current_terrain:
 		current_terrain = new_terrain
-		emit_signal("terrain_changed", current_terrain)
+		terrain_changed.emit()
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int):
 	if body is TileMap:

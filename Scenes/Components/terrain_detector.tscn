@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://2dq276mqwnck"]
+
+[ext_resource type="Script" path="res://Scripts/Components/TerrainDetector.gd" id="1_a6d7h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvt2o"]
+
+[node name="TerrainDetector" type="Area2D"]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("1_a6d7h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tvt2o")
