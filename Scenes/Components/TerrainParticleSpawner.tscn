@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://pcnyw7nwpaqa"]
+
+[ext_resource type="Script" path="res://Scripts/Components/TerrainParticleSpawner.gd" id="1_negh6"]
+[ext_resource type="PackedScene" uid="uid://4ea6nld8exji" path="res://Assets/Particles/hit_sand.tscn" id="2_quun4"]
+
+[node name="TerrainParticleSpawner" type="Node2D" node_paths=PackedStringArray("terrain_detector", "spawn_location")]
+position = Vector2(17, 0)
+script = ExtResource("1_negh6")
+terrain_detector = NodePath("../TerrainDetector")
+spawn_location = NodePath(".")
+terrain_map = {
+1: ExtResource("2_quun4"),
+2: ExtResource("2_quun4"),
+3: ExtResource("2_quun4")
+}
