@@ -34,10 +34,13 @@ texture = ExtResource("4_nunnb")
 
 [node name="TerrainDetector" parent="." instance=ExtResource("4_w5nxv")]
 
-[node name="TerrainParticleSpawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_location")]
+[node name="TerrainParticleSpawner" type="Node2D" parent="." node_paths=PackedStringArray("terrain_detector", "spawn_location")]
 position = Vector2(17, 0)
 script = ExtResource("5_3hy70")
+terrain_detector = NodePath("../TerrainDetector")
 spawn_location = NodePath(".")
 terrain_map = {
-1: ExtResource("6_5xvq7")
+1: ExtResource("6_5xvq7"),
+2: ExtResource("6_5xvq7"),
+3: ExtResource("6_5xvq7")
 }
