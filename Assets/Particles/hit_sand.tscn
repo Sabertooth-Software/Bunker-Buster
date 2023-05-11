@@ -28,7 +28,7 @@ scale_max = 6.0
 scale_curve = SubResource("CurveTexture_e0p4k")
 color_ramp = SubResource("GradientTexture1D_7ygd6")
 
-[node name="GPUParticles2D" type="GPUParticles2D"]
+[node name="SandParticle" type="GPUParticles2D"]
 emitting = false
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_jxtm8")
