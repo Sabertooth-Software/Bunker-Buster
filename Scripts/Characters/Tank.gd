@@ -8,6 +8,10 @@ class_name Tank
 @onready var body: Node2D = $Body
 
 @onready var shooting_component: ShootingComponent = $ShootingComponent
+@onready var terrain_detector: TerrainDetector = $TerrainDetector
+
+func _ready():
+	terrain_detector.terrain_changed.connect(_on_terrain_change)
 
 func move(direction: Vector2):
 	if direction:
@@ -23,3 +27,6 @@ func shoot(direction: Vector2, bullet: PackedScene):
 	
 func look(point: Vector2):
 	canon.look_at(point)
+
+func _on_terrain_change(new_terrain: Terrain.Type):
+	print(new_terrain)

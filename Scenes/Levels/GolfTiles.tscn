@@ -54,9 +54,10 @@ Speed = 70.0
 Bullet_Speed = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="PlayerTank"]
+zoom = Vector2(2, 2)
 
 [node name="RedTank" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_h7ayj")]
-position = Vector2(-75, 208)
+position = Vector2(-233, 207)
 target = NodePath("")
 
 [node name="GolfBall" parent="." instance=ExtResource("6_5fmxu")]
