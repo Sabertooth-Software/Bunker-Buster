@@ -34,3 +34,6 @@ texture = ExtResource("4_nunnb")
 [node name="TerrainDetector" parent="." instance=ExtResource("4_w5nxv")]
 
 [node name="TerrainParticleSpawner" parent="." instance=ExtResource("5_wqme0")]
+
+[connection signal="terrain_changed" from="TerrainDetector" to="." method="_on_terrain_detector_terrain_changed"]
+[connection signal="terrain_changed" from="TerrainDetector" to="TerrainParticleSpawner" method="_on_terrain_detector_terrain_changed"]

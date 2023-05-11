@@ -9,9 +9,6 @@ class_name TerrainParticleSpawner
 
 var current_turrain: Terrain.Type = Terrain.Type.GRASS
 
-func _ready():
-	terrain_detector.terrain_changed.connect(_on_terrain_changed)
-
 func _physics_process(_delta):
 	spawn_particles()
 
@@ -22,5 +19,5 @@ func spawn_particles():
 	particle.global_position = spawn_location.global_position
 	particle.emitting = true
 
-func _on_terrain_changed(new_turrain: Terrain.Type):
-	current_turrain = new_turrain
+func _on_terrain_detector_terrain_changed(new_terrain):
+	current_turrain = new_terrain
