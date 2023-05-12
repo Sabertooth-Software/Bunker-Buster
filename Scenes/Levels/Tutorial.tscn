@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dykjeun6yapiu"]
+[gd_scene load_steps=8 format=3 uid="uid://dykjeun6yapiu"]
 
 [ext_resource type="TileSet" uid="uid://c6cyh055mrm6s" path="res://Assets/TileMaps/GolfTiles.tres" id="1_82p63"]
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="2_br16g"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/Bullet.tscn" id="4_gjrag"]
 [ext_resource type="PackedScene" uid="uid://hh271eak8f3q" path="res://Scenes/Characters/Enemies/red_tank.tscn" id="5_topjw"]
 [ext_resource type="PackedScene" uid="uid://7sckx3547nbi" path="res://Scenes/Objects/golf_ball.tscn" id="6_j5yfb"]
+[ext_resource type="PackedScene" uid="uid://bqmrrq74v6qiu" path="res://Assets/Objects/Water.tscn" id="7_xayiy"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -47,10 +48,10 @@ layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array(524284, 131073, 0, 589820, 131073, 0, 655356, 131073, 0)
 layer_5/name = "Water"
 layer_5/enabled = true
-layer_5/modulate = Color(0, 0.396078, 1, 1)
+layer_5/modulate = Color(0.227451, 0.156863, 0.00392157, 1)
 layer_5/y_sort_enabled = false
 layer_5/y_sort_origin = 0
-layer_5/z_index = -4
+layer_5/z_index = -10
 layer_5/tile_data = PackedInt32Array(655364, 327681, 3, 655363, 327681, 3, 720899, 327681, 3, 786435, 327681, 3, 786436, 327681, 3, 786437, 327681, 3, 720901, 327681, 3, 655365, 327681, 3, 720898, 327681, 3, 786434, 327681, 3, 720900, 327681, 3, 589828, 327681, 3, 851972, 327681, 3, 851971, 327681, 3)
 
 [node name="PlayerTank" parent="." instance=ExtResource("2_br16g")]
@@ -68,3 +69,5 @@ target = NodePath("")
 
 [node name="GolfBall" parent="." instance=ExtResource("6_j5yfb")]
 position = Vector2(-327, 283)
+
+[node name="water" parent="." instance=ExtResource("7_xayiy")]

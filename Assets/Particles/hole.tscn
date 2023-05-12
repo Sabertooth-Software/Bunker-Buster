@@ -34,4 +34,5 @@ amount = 50
 process_material = SubResource("ParticleProcessMaterial_jmnu8")
 one_shot = true
 explosiveness = 0.6
+fixed_fps = 60
 trail_enabled = true
