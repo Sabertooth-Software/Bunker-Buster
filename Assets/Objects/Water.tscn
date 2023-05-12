@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqmrrq74v6qiu"]
+
+[ext_resource type="Material" uid="uid://begyosijrrrhn" path="res://Shaders/Elemental/water.tres" id="1_bbci5"]
+[ext_resource type="Texture2D" uid="uid://vd7ap2v7wpfb" path="res://icon.svg" id="2_70uck"]
+
+[node name="water" type="Sprite2D"]
+z_index = -5
+material = ExtResource("1_bbci5")
+position = Vector2(138, 384)
+texture = ExtResource("2_70uck")
