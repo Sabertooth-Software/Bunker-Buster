@@ -6,6 +6,7 @@ extends Control
 func _ready():
 	var level_data: LevelData = SceneManager.get_level_data()
 	par.set_text(str(level_data.par))
+	level_name.set_text("Hole " + str(level_data.level_number))
 
 func _on_start_level_pressed():
 	get_node("Scorecard").hide()

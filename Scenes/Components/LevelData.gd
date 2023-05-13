@@ -7,5 +7,5 @@ class_name LevelData
 @export var next_level: String
 
 func _init(_level_number: int, _par: int):
-	par = _par
 	level_number = _level_number
+	par = _par

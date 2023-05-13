@@ -14,10 +14,10 @@ var level_order = [
 
 func _ready():
 	level_data = {
-		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(0, 1),
-		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(1, 2),
-		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(2, 3),
-		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(3, 4)
+		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(1, 1),
+		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(2, 2),
+		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(3, 3),
+		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(4, 4)
 	}
 
 func next_level(current_level: int):
@@ -25,7 +25,7 @@ func next_level(current_level: int):
 	
 
 func select_level(level_number: int):
-	get_tree().change_scene_to_file("res://Scenes/Levels/Hole " + str(level_number) + ".tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/Hole " + str(level_number - 1) + ".tscn")
 
 	
 func get_level_data() -> LevelData:
