@@ -35,7 +35,7 @@ func _process(_delta):
 		arrow.scale.y = 0
 		ShotCounter.shoot.emit()
 		
-func _physics_process(delta):
+func _physics_process(_delta):
 	var slow_vector: Vector2 = lerp(linear_velocity, Vector2.ZERO, _deccel) * -1
 	apply_central_impulse(slow_vector)
 

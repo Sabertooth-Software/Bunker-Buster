@@ -3,18 +3,30 @@ extends Node
 var level_data: Dictionary
 
 signal scene_changed()
+signal end_scene()
+
+var level_order = [
+	"res://Scenes/Levels/Hole 1.tscn",
+	"res://Scenes/Levels/Hole 2.tscn",
+	"res://Scenes/Levels/Hole 3.tscn",
+	"res://Scenes/Levels/Hole 4.tscn"
+]
 
 func _ready():
 	level_data = {
-		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(1),
-		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(2),
-		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(3),
-		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(4),
+		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(0, 1),
+		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(1, 2),
+		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(2, 3),
+		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(3, 4)
 	}
 
-func change_scene(name: String):
-	get_tree().change_scene_to_file("res://Scenes/Levels/"+name+".tscn")
-	print("Changing Scene to "+name)
+func next_level(current_level: int):
+	get_tree().change_scene_to_file("res://Scenes/Levels/Hole " + str(current_level) + ".tscn")
+	
+
+func select_level(level_number: int):
+	get_tree().change_scene_to_file("res://Scenes/Levels/Hole " + str(level_number) + ".tscn")
+
 	
 func get_level_data() -> LevelData:
 	var current_scene = get_tree().get_current_scene().scene_file_path
