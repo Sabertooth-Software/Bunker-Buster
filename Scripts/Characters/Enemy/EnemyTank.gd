@@ -25,7 +25,6 @@ func _handle_movement():
 	if next_point==null:
 		_get_next_point()
 	var dist = global_position.distance_to(next_point)/100
-	#print(dist)
 	if dist>.2:
 		move_vector = (next_point-global_position).normalized()
 		super.move(move_vector*5)
@@ -40,8 +39,6 @@ func _ready():
 			_setup_timer()
 	wander_points.append(Pos0.global_position)
 	wander_points.append(Pos1.global_position)
-	print(wander_points[0])
-	print(wander_points[1])
 	next_point = wander_points[0]
 
 func on_timeout():
