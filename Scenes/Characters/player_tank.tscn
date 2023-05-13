@@ -6,7 +6,7 @@
 
 [node name="PlayerTank" instance=ExtResource("1_7d4p6")]
 collision_layer = 2
-collision_mask = 373
+collision_mask = 31
 script = ExtResource("1_yis1o")
 bullet = ExtResource("2_47anu")
 Speed = 70.0

@@ -1,13 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://7sckx3547nbi"]
+[gd_scene load_steps=7 format=3 uid="uid://7sckx3547nbi"]
 
 [ext_resource type="Texture2D" uid="uid://du2t4ebdidyeu" path="res://Assets/GolfBall.png" id="1_gpgr6"]
 [ext_resource type="Script" path="res://Scripts/Objects/golf_ball.gd" id="1_ka2a0"]
 [ext_resource type="Texture2D" uid="uid://7cevmelgguli" path="res://Assets/ArrowSprite.png" id="2_5yyv5"]
 [ext_resource type="PackedScene" uid="uid://2dq276mqwnck" path="res://Scenes/Components/terrain_detector.tscn" id="3_vy7mc"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ncb5b"]
-rough = true
-bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yno2n"]
 radius = 41.2689
@@ -16,18 +12,25 @@ radius = 41.2689
 radius = 8.75
 
 [node name="GolfBall" type="RigidBody2D"]
-collision_layer = 16
-physics_material_override = SubResource("PhysicsMaterial_ncb5b")
+collision_layer = 2
+collision_mask = 11
 gravity_scale = 2.66454e-15
 continuous_cd = 1
+can_sleep = false
 script = ExtResource("1_ka2a0")
+terrain_map = {
+1: 0.85,
+2: 0.9,
+3: 0.99
+}
 
 [node name="Arrow" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_5yyv5")
 offset = Vector2(0, -97)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BallSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_gpgr6")
 
 [node name="GrabRange" type="Area2D" parent="."]

@@ -12,3 +12,5 @@ func setup(_position: Vector2, _velocity: Vector2, _scene: Node, _initiator: Nod
 	global_position = _position     
 	velocity = _velocity
 
+func _on_timer_timeout():
+	queue_free()

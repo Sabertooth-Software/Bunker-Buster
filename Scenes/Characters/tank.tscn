@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfp2wtw5do8m7"]
+[gd_scene load_steps=9 format=3 uid="uid://dfp2wtw5do8m7"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Tank.gd" id="1_lnctx"]
 [ext_resource type="PackedScene" uid="uid://dhm8qd71af8hh" path="res://Scenes/Components/shooting_component.tscn" id="2_1hq3u"]
 [ext_resource type="Texture2D" uid="uid://vd7ap2v7wpfb" path="res://icon.svg" id="4_nunnb"]
 [ext_resource type="PackedScene" uid="uid://2dq276mqwnck" path="res://Scenes/Components/terrain_detector.tscn" id="4_w5nxv"]
 [ext_resource type="PackedScene" uid="uid://pcnyw7nwpaqa" path="res://Scenes/Components/TerrainParticleSpawner.tscn" id="5_wqme0"]
+[ext_resource type="PackedScene" uid="uid://4ea6nld8exji" path="res://Assets/Particles/hit_sand.tscn" id="6_5xvq7"]
+[ext_resource type="PackedScene" uid="uid://oolwahoot7m1" path="res://Assets/Particles/hole.tscn" id="7_13mp1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sin31"]
 size = Vector2(32, 32)
@@ -34,6 +36,11 @@ texture = ExtResource("4_nunnb")
 [node name="TerrainDetector" parent="." instance=ExtResource("4_w5nxv")]
 
 [node name="TerrainParticleSpawner" parent="." instance=ExtResource("5_wqme0")]
+terrain_map = {
+1: ExtResource("6_5xvq7"),
+2: ExtResource("7_13mp1"),
+3: ExtResource("6_5xvq7")
+}
 
 [connection signal="terrain_changed" from="TerrainDetector" to="." method="_on_terrain_detector_terrain_changed"]
 [connection signal="terrain_changed" from="TerrainDetector" to="TerrainParticleSpawner" method="_on_terrain_detector_terrain_changed"]
