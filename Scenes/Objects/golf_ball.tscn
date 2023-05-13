@@ -19,7 +19,7 @@ continuous_cd = 1
 script = ExtResource("1_ka2a0")
 terrain_map = {
 1: 0.85,
-2: 0.9,
+2: 0.94,
 3: 0.99
 }
 

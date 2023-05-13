@@ -1,8 +1,6 @@
 extends Node2D
 
 @onready var total_score = 0
-@onready var _par = 0
-
 var scores:Dictionary
 
 signal shoot()
