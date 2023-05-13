@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ShotCounter="*res://Scripts/Components/ShotCounter.gd"
+SceneManager="*res://Scripts/Components/SceneManager.gd"
 
 [editor_plugins]
 
