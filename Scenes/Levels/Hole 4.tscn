@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cd1abkiwr8kk4"]
+[gd_scene load_steps=9 format=3 uid="uid://cd1abkiwr8kk4"]
 
 [ext_resource type="TileSet" uid="uid://c6cyh055mrm6s" path="res://Assets/TileMaps/GolfTiles.tres" id="1_m0gx7"]
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="2_j1a50"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/Bullet.tscn" id="4_6actv"]
 [ext_resource type="PackedScene" uid="uid://hh271eak8f3q" path="res://Scenes/Characters/Enemies/red_tank.tscn" id="5_kgf7q"]
 [ext_resource type="PackedScene" uid="uid://7sckx3547nbi" path="res://Scenes/Objects/golf_ball.tscn" id="6_qun68"]
-[ext_resource type="PackedScene" uid="uid://qmhh07hyixdb" path="res://Scenes/Components/ui.tscn" id="7_p6vpu"]
+[ext_resource type="PackedScene" uid="uid://dk0vl7gvy64nc" path="res://Scenes/Components/GUI.tscn" id="7_xlvsu"]
+[ext_resource type="PackedScene" uid="uid://bxv4iggssnkxr" path="res://Scenes/Components/LevelData.tscn" id="8_4hmhe"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -78,10 +79,9 @@ target = NodePath("")
 [node name="GolfBall" parent="." instance=ExtResource("6_qun68")]
 position = Vector2(1175, -64)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="GUI" parent="." instance=ExtResource("7_xlvsu")]
 
-[node name="UI" parent="CanvasLayer" instance=ExtResource("7_p6vpu")]
-offset_left = 573.0
-offset_top = 296.0
-offset_right = 573.0
-offset_bottom = 296.0
+[node name="LevelData" parent="." instance=ExtResource("8_4hmhe")]
+par = 4
+current_level = "Hole 4"
+next_level = "Hole 5"
