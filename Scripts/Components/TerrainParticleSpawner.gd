@@ -10,7 +10,7 @@ class_name TerrainParticleSpawner
 var current_turrain: Terrain.Type = Terrain.Type.GRASS
 
 func _physics_process(_delta):
-	spawn_particles()
+	pass
 
 func spawn_particles():
 	var particle: GPUParticles2D = terrain_map[current_turrain].instantiate()

@@ -27,7 +27,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_5yyv5")
 offset = Vector2(0, -97)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BallSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_gpgr6")
 
 [node name="GrabRange" type="Area2D" parent="."]

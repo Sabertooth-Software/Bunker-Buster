@@ -26,3 +26,9 @@ scale = Vector2(3, 3)
 mesh = SubResource("SphereMesh_plxgq")
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("2_qjgw2")]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
