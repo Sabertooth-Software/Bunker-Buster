@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/Bullet.tscn" id="4_6actv"]
 [ext_resource type="PackedScene" uid="uid://hh271eak8f3q" path="res://Scenes/Characters/Enemies/red_tank.tscn" id="5_kgf7q"]
 [ext_resource type="PackedScene" uid="uid://7sckx3547nbi" path="res://Scenes/Objects/golf_ball.tscn" id="6_qun68"]
-[ext_resource type="PackedScene" uid="uid://bqmrrq74v6qiu" path="res://Assets/Objects/Water.tscn" id="7_jgkw6"]
+[ext_resource type="PackedScene" uid="uid://qmhh07hyixdb" path="res://Scenes/Components/ui.tscn" id="7_p6vpu"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -78,47 +78,10 @@ target = NodePath("")
 [node name="GolfBall" parent="." instance=ExtResource("6_qun68")]
 position = Vector2(1175, -64)
 
-[node name="Water" type="Node2D" parent="."]
-position = Vector2(-272, 944)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="water" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(-16, 0)
-
-[node name="water2" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(112, 0)
-
-[node name="water3" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(112, -128)
-
-[node name="water4" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(-16, -128)
-
-[node name="water7" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(416, -64)
-
-[node name="water8" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(544, -64)
-
-[node name="water9" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(544, -192)
-
-[node name="water10" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(416, -192)
-
-[node name="water11" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(672, -64)
-
-[node name="water12" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(800, -64)
-
-[node name="water15" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(928, -64)
-
-[node name="water14" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(672, -192)
-
-[node name="water5" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(-16, -256)
-
-[node name="water6" parent="Water" instance=ExtResource("7_jgkw6")]
-position = Vector2(112, -256)
+[node name="UI" parent="CanvasLayer" instance=ExtResource("7_p6vpu")]
+offset_left = 573.0
+offset_top = 296.0
+offset_right = 573.0
+offset_bottom = 296.0
