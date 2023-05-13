@@ -24,5 +24,3 @@ func shoot(direction: Vector2, bullet: PackedScene):
 func look(point: Vector2):
 	canon.look_at(point)
 
-func _on_terrain_detector_terrain_changed(new_terrain):
-	print(new_terrain)

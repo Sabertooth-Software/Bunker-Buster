@@ -1,14 +1,22 @@
 extends Node
 
+var level_data: Dictionary
 
-# Called when the node enters the scene tree for the first time.
+signal scene_changed()
+
 func _ready():
-	pass # Replace with function body.
-
+	level_data = {
+		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(1),
+		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(2),
+		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(3),
+		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(4),
+	}
 
 func change_scene(name: String):
 	get_tree().change_scene_to_file("res://Scenes/Levels/"+name+".tscn")
 	print("Changing Scene to "+name)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	
+func get_level_data() -> LevelData:
+	var current_scene = get_tree().get_current_scene().scene_file_path
+	return level_data.get(current_scene)
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cd1abkiwr8kk4"]
+[gd_scene load_steps=11 format=3 uid="uid://cd1abkiwr8kk4"]
 
 [ext_resource type="TileSet" uid="uid://c6cyh055mrm6s" path="res://Assets/TileMaps/GolfTiles.tres" id="1_m0gx7"]
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="2_j1a50"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://7sckx3547nbi" path="res://Scenes/Objects/golf_ball.tscn" id="6_qun68"]
 [ext_resource type="PackedScene" uid="uid://dk0vl7gvy64nc" path="res://Scenes/Components/GUI.tscn" id="7_xlvsu"]
 [ext_resource type="PackedScene" uid="uid://bxv4iggssnkxr" path="res://Scenes/Components/LevelData.tscn" id="8_4hmhe"]
+[ext_resource type="Script" path="res://Scripts/Objects/Hole.gd" id="9_j4bpm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jubvk"]
+radius = 6.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -77,7 +81,7 @@ position = Vector2(729, -98)
 target = NodePath("")
 
 [node name="GolfBall" parent="." instance=ExtResource("6_qun68")]
-position = Vector2(1175, -64)
+position = Vector2(504, -383)
 
 [node name="GUI" parent="." instance=ExtResource("7_xlvsu")]
 
@@ -85,3 +89,14 @@ position = Vector2(1175, -64)
 par = 4
 current_level = "Hole 4"
 next_level = "Hole 5"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("9_j4bpm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(534, -387)
+shape = SubResource("CircleShape2D_jubvk")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

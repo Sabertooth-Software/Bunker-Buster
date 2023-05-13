@@ -5,7 +5,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ShotCounter.end_level.connect(_on_end_level)
 	card.hide()
 
 func set_score(level:String,score:int):
