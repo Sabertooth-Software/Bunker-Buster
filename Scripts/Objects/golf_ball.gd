@@ -25,7 +25,7 @@ func _process(_delta):
 		_shoot_vector = _start_position - get_global_mouse_position()
 		var proportion: float = clampf(_shoot_vector.length()/max_shot_power, 0, 1)
 		arrow.scale.y = proportion * .75
-		arrow.rotation = _shoot_vector.normalized().angle() + (PI/2)
+		arrow.global_rotation = _shoot_vector.normalized().angle() + (PI/2)
 	if Input.is_action_just_released("putt"):
 		arrow.visible = false
 		_shoot_vector = _shoot_vector.normalized() * speed_modifier 
