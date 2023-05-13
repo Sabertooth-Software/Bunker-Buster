@@ -10,7 +10,8 @@ func _ready():
 func _update_level():
 	pass
 	#level_name.set_text(ShotCounter.current_level)
-	#par.set_text(str(ShotCounter._par))
+	var level_data: LevelData = SceneManager.get_level_data()
+	par.set_text(str(level_data.par))
 
 
 func _on_start_level_pressed():
