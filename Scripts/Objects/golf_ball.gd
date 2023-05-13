@@ -6,6 +6,7 @@ extends RigidBody2D
 var _start_position: Vector2
 var _shoot_vector: Vector2
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	terrain_detector.terrain_changed.connect(_on_terrain_chnaged)
@@ -24,6 +25,8 @@ func _process(_delta):
 		_shoot_vector = _shoot_vector.normalized() * 100
 		apply_central_impulse(_shoot_vector)
 		arrow.scale.y = 0
+		ShotCounter.increase_shots()
+
 
 func _on_terrain_chnaged(new_terrain: Terrain.Type):
 	print(new_terrain)

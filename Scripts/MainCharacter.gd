@@ -8,6 +8,9 @@ func _process(_delta):
 	if Input.is_action_just_pressed("shoot"):
 		var shooting_vector: Vector2 = get_global_mouse_position() - global_position
 		super.shoot(shooting_vector, bullet)
+		ShotCounter.increase_shots()
+	if Input.is_action_just_pressed("debug_finishlevel"):
+		ShotCounter.finish_level()
 
 func _physics_process(_delta):
 	super.look(get_global_mouse_position())
