@@ -8,7 +8,7 @@ var scores:Dictionary
 var current_level: String
 var next_level: String
 
-signal update_ui(score:int)
+signal update_ui(score:int,par:int)
 signal end_level(hole_score:int,total_score:int,cur_level:String)
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,15 +18,16 @@ func _update_dict(level:String, score:int):
 	scores[level] = score
 
 func _update_ui():
-	update_ui.emit(shots)
+	update_ui.emit(shots,_par)
+	
 func update_level(par:int,_current_level:String,_next_level:String): #set par, current level, and next level when level loads
 	_par = par
 	current_level = _current_level
 	next_level = _next_level
 	shots = 0
-	print("Hole Par: " +str(_par))
-	print("Current Level: "+current_level)
-	print("Next Level: "+next_level)
+	_update_ui()
+
+
 func increase_shots():
 	shots = shots+1
 	print("Shots: " + str(shots))
