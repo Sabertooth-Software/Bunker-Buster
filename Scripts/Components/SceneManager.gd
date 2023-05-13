@@ -6,10 +6,10 @@ signal scene_changed()
 
 func _ready():
 	level_data = {
-		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(6),
-		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(6),
-		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(6),
-		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(6),
+		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(1),
+		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(2),
+		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(3),
+		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(4),
 	}
 
 func change_scene(name: String):
