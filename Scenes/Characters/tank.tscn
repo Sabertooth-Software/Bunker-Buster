@@ -42,5 +42,4 @@ terrain_map = {
 3: ExtResource("6_5xvq7")
 }
 
-[connection signal="terrain_changed" from="TerrainDetector" to="." method="_on_terrain_detector_terrain_changed"]
 [connection signal="terrain_changed" from="TerrainDetector" to="TerrainParticleSpawner" method="_on_terrain_detector_terrain_changed"]
