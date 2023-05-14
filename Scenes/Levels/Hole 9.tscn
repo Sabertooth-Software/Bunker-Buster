@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnw6ymphibhl4"]
+[gd_scene load_steps=11 format=3 uid="uid://dnw6ymphibhl4"]
 
 [ext_resource type="TileSet" uid="uid://c6cyh055mrm6s" path="res://Assets/TileMaps/GolfTiles.tres" id="1_bdrlp"]
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="2_e5a2t"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dk0vl7gvy64nc" path="res://Scenes/Components/GUI.tscn" id="7_irq1g"]
 [ext_resource type="PackedScene" uid="uid://dx60xw6lergni" path="res://Scenes/Objects/hole.tscn" id="8_sa501"]
 [ext_resource type="PackedScene" uid="uid://bqmrrq74v6qiu" path="res://Assets/Objects/Water.tscn" id="9_ef247"]
+[ext_resource type="PackedScene" uid="uid://ca571cslm0iuh" path="res://Scenes/Components/game_camera.tscn" id="10_ttt7t"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -66,11 +67,13 @@ Bullet_Speed = 1.0
 [node name="RedTank" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_ijpqx")]
 position = Vector2(288, 352)
 target = NodePath("")
+timeout = null
 points = Array[Vector2]([Vector2(288, 352), Vector2(288, 576), Vector2(688, 576), Vector2(288, 576)])
 
 [node name="RedTank2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_ijpqx")]
 position = Vector2(576, 736)
 target = NodePath("")
+timeout = null
 points = Array[Vector2]([Vector2(576, 736), Vector2(192, 736), Vector2(192, 400), Vector2(192, 736)])
 
 [node name="water38" parent="RedTank2" instance=ExtResource("9_ef247")]
@@ -79,11 +82,13 @@ position = Vector2(-912, -480)
 [node name="RedTank3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_ijpqx")]
 position = Vector2(1184, 128)
 target = NodePath("")
+timeout = null
 points = Array[Vector2]([Vector2(1008, 224), Vector2(1184, 128)])
 
 [node name="RedTank4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_ijpqx")]
 position = Vector2(800, -96)
 target = NodePath("")
+timeout = null
 points = Array[Vector2]([Vector2(800, -96), Vector2(800, -336)])
 
 [node name="GolfBall" parent="." instance=ExtResource("6_x3jpw")]
@@ -207,3 +212,5 @@ position = Vector2(1040, 288)
 
 [node name="water31" parent="Water" instance=ExtResource("9_ef247")]
 position = Vector2(1040, 544)
+
+[node name="Game camera" parent="." instance=ExtResource("10_ttt7t")]
