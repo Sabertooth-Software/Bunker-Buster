@@ -32,7 +32,11 @@ func get_current_score() -> int:
 	
 func get_total_score() -> int:
 	var total_score: int = 0
+	var total_par: int = 0
 	for value in scores:
 		total_score += scores[value]
-	return total_score
+	for element in scores:
+		total_par += SceneManager.level_data[element].par
+	print(total_par)
+	return (total_score-total_par)
 	

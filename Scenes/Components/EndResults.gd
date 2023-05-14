@@ -28,6 +28,6 @@ func set_score(score:int):
 	score_container.get_node(str(current_level)).set_text(str(score));
 
 func _on_level_complete():
-	set_score(ShotCounter.get_current_score())
+	set_score(ShotCounter.get_current_score() - SceneManager.current_level.par )
 	total_score.set_text("Total Score: "+str(ShotCounter.get_total_score()))
 	card.show()
