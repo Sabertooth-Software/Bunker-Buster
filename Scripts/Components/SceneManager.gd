@@ -1,14 +1,14 @@
 extends Node
 
 var level_data: Dictionary
-var current_level: LevelData
+var current_level: LevelData 
+var title_screen: String = "res://Scenes/Levels/Title Screen.tscn" 
 
 signal scene_changed()
 signal level_complete()
 
 func _ready():
 	level_data = {
-		"res://Scenes/Levels/Title Screen.tscn": LevelData.new(0, 0),
 		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(1, 1),
 		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(2, 2),
 		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(3, 3),
@@ -33,4 +33,7 @@ func _set_level(level_number: int):
 func get_level_data() -> LevelData:
 	var current_scene = get_tree().get_current_scene().scene_file_path
 	return level_data.get(current_scene)
+	
+func return_to_title():
+	get_tree().change_scene_to_file(title_screen)
 
