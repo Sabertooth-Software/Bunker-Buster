@@ -9,12 +9,12 @@ signal level_complete()
 
 func _ready():
 	level_data = {
-		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(1, 1),
-		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(2, 2),
-		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(3, 3),
-		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(4, 4),
-		"res://Scenes/Levels/Hole 5.tscn": LevelData.new(5, 11),
-		"res://Scenes/Levels/Hole 6.tscn": LevelData.new(6, 11),
+		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(1, 3),
+		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(2, 5),
+		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(3, 8),
+		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(4, 6),
+		"res://Scenes/Levels/Hole 5.tscn": LevelData.new(5, 6),
+		"res://Scenes/Levels/Hole 6.tscn": LevelData.new(6, 6),
 		"res://Scenes/Levels/Hole 7.tscn": LevelData.new(7, 11),
 		"res://Scenes/Levels/Hole 8.tscn": LevelData.new(8, 11),
 		"res://Scenes/Levels/Hole 9.tscn": LevelData.new(9, 11)
