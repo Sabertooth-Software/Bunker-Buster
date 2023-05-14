@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfp2wtw5do8m7"]
+[gd_scene load_steps=13 format=3 uid="uid://dfp2wtw5do8m7"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Tank.gd" id="1_lnctx"]
 [ext_resource type="PackedScene" uid="uid://dhm8qd71af8hh" path="res://Scenes/Components/shooting_component.tscn" id="2_1hq3u"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://pcnyw7nwpaqa" path="res://Scenes/Components/TerrainParticleSpawner.tscn" id="5_wqme0"]
 [ext_resource type="PackedScene" uid="uid://4ea6nld8exji" path="res://Assets/Particles/hit_sand.tscn" id="6_5xvq7"]
 [ext_resource type="PackedScene" uid="uid://oolwahoot7m1" path="res://Assets/Particles/hole.tscn" id="7_13mp1"]
+[ext_resource type="AudioStream" uid="uid://bwbjwukvyblxd" path="res://Audio/tank-fire.wav" id="9_rt163"]
+[ext_resource type="AudioStream" uid="uid://bqdhetoes0itq" path="res://Audio/tank-movement.wav" id="10_2s47y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sin31"]
 size = Vector2(32, 32)
@@ -55,5 +57,12 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_no6m2")
+
+[node name="tankFire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_rt163")
+volume_db = -10.0
+
+[node name="tankMovement" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_2s47y")
 
 [connection signal="terrain_changed" from="TerrainDetector" to="Body/TerrainParticleSpawner" method="_on_terrain_detector_terrain_changed"]

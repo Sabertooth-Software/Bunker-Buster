@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://hh271eak8f3q"]
+[gd_scene load_steps=5 format=3 uid="uid://hh271eak8f3q"]
 
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="1_8d7b4"]
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyTank.gd" id="1_hmcf7"]
 [ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/Bullet.tscn" id="3_6ux1k"]
+[ext_resource type="AudioStream" uid="uid://c65wfjflw6nvi" path="res://Audio/tank-destroyed.wav" id="4_cx1xp"]
 
 [node name="RedTank" instance=ExtResource("1_8d7b4")]
 collision_layer = 8
@@ -15,3 +16,6 @@ Speed = 10.0
 Bullet_Speed = 1.0
 
 [node name="Timer" type="Timer" parent="." index="4"]
+
+[node name="tankDestroyed" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("4_cx1xp")

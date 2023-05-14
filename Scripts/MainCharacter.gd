@@ -2,6 +2,7 @@ extends Tank
 class_name PlayerTank
 
 @export var bullet: PackedScene
+@onready var tank_movement: AudioStreamPlayer = $tankMovement
 
 var _start_position: Vector2
 
@@ -26,6 +27,9 @@ func _physics_process(_delta):
 		var moving_vector: Vector2 = Input.get_vector("left", "right", "up", "down")
 		if moving_vector:
 			super.move(moving_vector)
+			
+				
+				
 			
 
 func _on_hit(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int):

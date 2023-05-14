@@ -6,6 +6,7 @@ extends Tank
 @export var points: Array[Vector2]
 
 @onready var timer: Timer = $Timer
+@onready var tank_explosion: AudioStreamPlayer = $tankDestroyed
 
 var point_index: int = 0
 var next_point: Vector2
@@ -44,6 +45,7 @@ func _on_hit(body_rid: RID, _body: Node2D, body_shape_index: int, local_shape_in
 	if _body is Bullet and self not in _body.get_collision_exceptions():
 		remove_from_group(ShotCounter.tank_group)
 		ShotCounter.tank_destroyed.emit()
+		tank_explosion.play()
 		# jank as hell
 		timer.stop()
 		points = []

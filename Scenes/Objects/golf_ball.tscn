@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://7sckx3547nbi"]
+[gd_scene load_steps=8 format=3 uid="uid://7sckx3547nbi"]
 
 [ext_resource type="Texture2D" uid="uid://du2t4ebdidyeu" path="res://Assets/GolfBall.png" id="1_gpgr6"]
 [ext_resource type="Script" path="res://Scripts/Objects/golf_ball.gd" id="1_ka2a0"]
 [ext_resource type="Texture2D" uid="uid://7cevmelgguli" path="res://Assets/ArrowSprite.png" id="2_5yyv5"]
 [ext_resource type="PackedScene" uid="uid://2dq276mqwnck" path="res://Scenes/Components/terrain_detector.tscn" id="3_vy7mc"]
+[ext_resource type="AudioStream" uid="uid://cdojwki6s4f4s" path="res://Audio/ball-stroke.wav" id="5_4ndoa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yno2n"]
 radius = 41.2689
@@ -43,3 +44,6 @@ shape = SubResource("CircleShape2D_yno2n")
 shape = SubResource("CircleShape2D_u648x")
 
 [node name="TerrainDetector" parent="." instance=ExtResource("3_vy7mc")]
+
+[node name="strokeAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4ndoa")

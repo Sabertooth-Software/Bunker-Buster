@@ -7,6 +7,7 @@ class_name Tank
 @onready var canon: Node2D = $Canon
 @onready var body: Node2D = $Body
 @onready var hitbox: Area2D = $Hitbox
+@onready var tank_fire: AudioStreamPlayer = $tankFire
 
 @onready var shooting_component: ShootingComponent = $Canon/ShootingComponent
 
@@ -25,6 +26,7 @@ func move(direction: Vector2):
 func shoot(direction: Vector2, bullet: PackedScene):
 	var shooting_vector: Vector2 = direction.normalized() * Bullet_Speed
 	shooting_component.shoot(shooting_vector, bullet, self)
+	tank_fire.play()
 	
 func look(point: Vector2):
 	canon.look_at(point)

@@ -3,11 +3,13 @@ class_name GolfBall
 
 @onready var terrain_detector: TerrainDetector = $TerrainDetector
 @onready var arrow: Node2D = $Arrow
+@onready var stroke_audio: AudioStreamPlayer = $strokeAudio
 
 @export var terrain_map: Dictionary
 
 @export var max_shot_power: float = 100
 @export var speed_modifier: float = 500
+
 
 var _start_position: Vector2
 var _shoot_vector: Vector2
@@ -37,6 +39,7 @@ func _process(_delta):
 			apply_central_impulse(_shoot_vector)
 			arrow.scale.y = 0
 			ShotCounter.shoot.emit()
+			stroke_audio.play(0.08)
 		
 func _physics_process(_delta):
 	var slow_vector: Vector2 = lerp(linear_velocity, Vector2.ZERO, _deccel) * -1

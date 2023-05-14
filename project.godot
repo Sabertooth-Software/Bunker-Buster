@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ShotCounter="*res://Scripts/Components/ShotCounter.gd"
 SceneManager="*res://Scripts/Components/SceneManager.gd"
 GameModeManager="*res://Scripts/game_mode_manager.gd"
+ThemeMusic="*res://Scenes/theme_music.tscn"
 
 [editor_plugins]
 

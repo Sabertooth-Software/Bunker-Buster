@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://eo0qcssxbhio"]
+
+[ext_resource type="AudioStream" uid="uid://4lqax865t6u0" path="res://Audio/Tank theme.wav" id="1_cme3l"]
+
+[node name="themeMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_cme3l")
+volume_db = -10.0
+autoplay = true
