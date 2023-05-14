@@ -20,14 +20,14 @@ func _ready():
 			target = player_tank
 			_setup_timer()
 	if points:
-		next_point = points[0].global_position
+		next_point = points[0]
 
 func _get_next_point():
 	if point_index >= points.size() - 1:
 		point_index = 0
 	else :
 		point_index += 1
-	next_point = points[point_index].global_position
+	next_point = points[point_index]
 
 func _handle_movement():
 	if next_point==null:
