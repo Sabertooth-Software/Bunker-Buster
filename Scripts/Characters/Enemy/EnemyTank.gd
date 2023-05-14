@@ -7,10 +7,13 @@ extends Tank
 
 @onready var timer: Timer = $Timer
 @onready var tank_explosion: AudioStreamPlayer = $tankDestroyed
+@onready var smoke: CPUParticles2D = $Smoke
 
 var point_index: int = 0
 var next_point: Vector2
 var move_vector: Vector2
+
+var _destroyed: bool = false
 
 func _ready():
 	super._ready()
@@ -49,6 +52,7 @@ func _on_hit(body_rid: RID, _body: Node2D, body_shape_index: int, local_shape_in
 		# jank as hell
 		timer.stop()
 		points = []
+		_destroyed = true
 
 func on_timeout():
 	assert(target != null, "Tried to shoot without target assigned to enemy tank")
@@ -60,6 +64,8 @@ func _process(_delta):
 	super.look(target.global_position)
 	if points:
 		_handle_movement()
+	if _destroyed:
+		smoke.emitting = true
 
 func _setup_timer():
 	timer.timeout.connect(on_timeout)

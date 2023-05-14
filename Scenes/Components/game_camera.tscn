@@ -6,3 +6,4 @@
 process_mode = 3
 position = Vector2(451, -278)
 script = ExtResource("1_dohfc")
+panning_speed = 300.0

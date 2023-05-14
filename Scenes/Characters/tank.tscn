@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfp2wtw5do8m7"]
+[gd_scene load_steps=10 format=3 uid="uid://dfp2wtw5do8m7"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Tank.gd" id="1_lnctx"]
 [ext_resource type="PackedScene" uid="uid://dhm8qd71af8hh" path="res://Scenes/Components/shooting_component.tscn" id="2_1hq3u"]
@@ -52,5 +52,3 @@ volume_db = -10.0
 
 [node name="tankMovement" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_2s47y")
-
-[connection signal="terrain_changed" from="TerrainDetector" to="Body/TerrainParticleSpawner" method="_on_terrain_detector_terrain_changed"]

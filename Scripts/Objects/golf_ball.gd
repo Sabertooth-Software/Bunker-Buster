@@ -25,7 +25,7 @@ func _ready():
 	_deccel = terrain_map[Terrain.Type.GRASS]
 
 func _process(_delta):
-	if GameModeManager.get_current_mode() == GameModeManager.Mode.GOLF and linear_velocity.length() < 5:
+	if GameModeManager.get_current_mode() == GameModeManager.Mode.GOLF and linear_velocity.length() < 30:
 		if Input.is_action_just_pressed("putt"):
 			_putting = true
 			arrow.visible = true
