@@ -8,6 +8,7 @@ signal level_complete()
 
 func _ready():
 	level_data = {
+		"res://Scenes/Levels/Title Screen.tscn": LevelData.new(0, 0),
 		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(1, 1),
 		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(2, 2),
 		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(3, 3),
