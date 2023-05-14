@@ -3,23 +3,31 @@ extends Tank
 @export var bullet: PackedScene
 @export var target: Node2D
 @export var timeout: float = 1.5
+@export var points: Array
 
 @onready var timer: Timer = $Timer
 
-@onready var Pos0 : Node2D = $Position0
-@onready var Pos1 : Node2D = $Position1
-
-var wander_points = []
 var point_index: int = 0
 var next_point: Vector2
 var move_vector: Vector2
 
+func _ready():
+	super._ready()
+	add_to_group(ShotCounter.tank_group)
+	if target == null:
+		var player_tank: Node = get_tree().get_current_scene().get_node("PlayerTank")
+		if player_tank is PlayerTank:
+			target = player_tank
+			_setup_timer()
+	if points:
+		next_point = points[0]
+
 func _get_next_point():
-	if point_index+1==wander_points.size():
+	if point_index >= points.size() - 1:
 		point_index = 0
 	else :
-		point_index = point_index+1
-	next_point = wander_points[point_index]
+		point_index += 1
+	next_point = points[point_index]
 
 func _handle_movement():
 	if next_point==null:
@@ -31,15 +39,10 @@ func _handle_movement():
 	else:
 		_get_next_point()
 
-func _ready():
-	if target == null:
-		var player_tank: Node = get_tree().get_current_scene().get_node("PlayerTank")
-		if player_tank is PlayerTank:
-			target = player_tank
-			_setup_timer()
-	wander_points.append(Pos0.global_position)
-	wander_points.append(Pos1.global_position)
-	next_point = wander_points[0]
+func _on_hit(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int):
+	super._on_hit(body_rid, body, body_shape_index, local_shape_index)
+	remove_from_group(ShotCounter.tank_group)
+	ShotCounter.tank_destroyed.emit()
 
 func on_timeout():
 	assert(target != null, "Tried to shoot without target assigned to enemy tank")

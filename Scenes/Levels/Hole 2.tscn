@@ -71,14 +71,17 @@ Bullet_Speed = 1.0
 [node name="RedTank" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_kskr8")]
 position = Vector2(96, 729)
 target = NodePath("")
+points = []
 
 [node name="RedTank2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_kskr8")]
 position = Vector2(341, 246)
 target = NodePath("")
+points = []
 
 [node name="RedTank3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_kskr8")]
 position = Vector2(388, 686)
 target = NodePath("")
+points = []
 
 [node name="GolfBall" parent="." instance=ExtResource("6_mpryr")]
 position = Vector2(442, 288)

@@ -5,9 +5,13 @@ var scores:Dictionary
 
 signal shoot()
 signal score_update(score: int)
+signal tank_destroyed()
+
+var tank_group: String = "Tanks"
 
 func _ready():
 	shoot.connect(_on_shoot)
+	tank_destroyed.connect(_on_tank_destroy)
 	
 func _on_shoot():
 	var current_scene = get_tree().get_current_scene().scene_file_path
@@ -16,6 +20,10 @@ func _on_shoot():
 	else:
 		scores[current_scene] = 1
 	score_update.emit(scores[current_scene])
+	
+func _on_tank_destroy():
+	var groups = get_tree().get_nodes_in_group(tank_group)
+	print(groups)
 	
 func get_current_score() -> int:
 	var current_scene = get_tree().get_current_scene().scene_file_path
@@ -26,3 +34,4 @@ func get_total_score() -> int:
 	for value in scores:
 		total_score += scores[value]
 	return total_score
+	
