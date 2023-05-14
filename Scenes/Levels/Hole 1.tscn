@@ -69,6 +69,7 @@ Bullet_Speed = 1.0
 [node name="RedTank" parent="." instance=ExtResource("5_ahov5")]
 z_index = 0
 position = Vector2(141, -44)
+rotation = 0.0
 
 [node name="Node2D2" type="Node2D" parent="RedTank"]
 position = Vector2(-141, 44)

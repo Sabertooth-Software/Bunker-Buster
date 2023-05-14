@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfp2wtw5do8m7"]
+[gd_scene load_steps=11 format=3 uid="uid://dfp2wtw5do8m7"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Tank.gd" id="1_lnctx"]
 [ext_resource type="PackedScene" uid="uid://dhm8qd71af8hh" path="res://Scenes/Components/shooting_component.tscn" id="2_1hq3u"]
-[ext_resource type="Texture2D" uid="uid://vd7ap2v7wpfb" path="res://icon.svg" id="4_nunnb"]
+[ext_resource type="Texture2D" uid="uid://ccdg4qihovc7q" path="res://Assets/TankSprite/tank-base.png" id="3_dotvh"]
+[ext_resource type="Texture2D" uid="uid://bmeavv0i8viaf" path="res://Assets/TankSprite/tank-cannon.png" id="4_8ty1j"]
 [ext_resource type="PackedScene" uid="uid://2dq276mqwnck" path="res://Scenes/Components/terrain_detector.tscn" id="4_w5nxv"]
 [ext_resource type="PackedScene" uid="uid://pcnyw7nwpaqa" path="res://Scenes/Components/TerrainParticleSpawner.tscn" id="5_wqme0"]
 [ext_resource type="PackedScene" uid="uid://4ea6nld8exji" path="res://Assets/Particles/hit_sand.tscn" id="6_5xvq7"]
@@ -16,6 +17,7 @@ size = Vector2(35, 35)
 
 [node name="Tank" type="CharacterBody2D"]
 z_index = 2
+rotation = -1.5708
 collision_layer = 16
 collision_mask = 469
 script = ExtResource("1_lnctx")
@@ -25,26 +27,26 @@ position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_sin31")
 debug_color = Color(0.0196078, 0.254902, 1, 0.419608)
 
-[node name="ShootingComponent" parent="." instance=ExtResource("2_1hq3u")]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(3.23088, 1.69783)
-
 [node name="Body" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_nunnb")
+texture = ExtResource("3_dotvh")
 
-[node name="Canon" type="Sprite2D" parent="."]
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("4_nunnb")
-
-[node name="TerrainDetector" parent="." instance=ExtResource("4_w5nxv")]
-
-[node name="TerrainParticleSpawner" parent="." instance=ExtResource("5_wqme0")]
+[node name="TerrainParticleSpawner" parent="Body" node_paths=PackedStringArray("terrain_detector") instance=ExtResource("5_wqme0")]
+position = Vector2(2.08165e-12, 15)
+terrain_detector = NodePath("../../TerrainDetector")
 terrain_map = {
 1: ExtResource("6_5xvq7"),
 2: ExtResource("7_13mp1"),
 3: ExtResource("6_5xvq7")
 }
+
+[node name="Canon" type="Sprite2D" parent="."]
+texture = ExtResource("4_8ty1j")
+
+[node name="ShootingComponent" parent="Canon" instance=ExtResource("2_1hq3u")]
+position = Vector2(2.08165e-12, -25)
+scale = Vector2(3.23088, 1.69783)
+
+[node name="TerrainDetector" parent="." instance=ExtResource("4_w5nxv")]
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
@@ -54,4 +56,4 @@ collision_mask = 16
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_no6m2")
 
-[connection signal="terrain_changed" from="TerrainDetector" to="TerrainParticleSpawner" method="_on_terrain_detector_terrain_changed"]
+[connection signal="terrain_changed" from="TerrainDetector" to="Body/TerrainParticleSpawner" method="_on_terrain_detector_terrain_changed"]

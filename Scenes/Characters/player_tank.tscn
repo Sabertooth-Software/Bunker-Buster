@@ -11,3 +11,6 @@ script = ExtResource("1_yis1o")
 bullet = ExtResource("2_47anu")
 Speed = 70.0
 Bullet_Speed = 1.0
+
+[node name="ShootingComponent" parent="." index="1"]
+position = Vector2(9.87741e-13, 2.08165e-12)

@@ -14,7 +14,6 @@ height = 2.0
 collision_layer = 16
 collision_mask = 27
 gravity_scale = 2.66454e-15
-continuous_cd = 1
 contact_monitor = true
 script = ExtResource("1_6j12e")
 
@@ -28,7 +27,7 @@ mesh = SubResource("SphereMesh_plxgq")
 [node name="GPUParticles2D" parent="." instance=ExtResource("2_qjgw2")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 
