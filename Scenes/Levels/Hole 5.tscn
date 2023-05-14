@@ -87,6 +87,7 @@ position = Vector2(691, 279)
 position = Vector2(-2, 1)
 
 [node name="water" parent="." instance=ExtResource("9_qhsde")]
+visible = false
 position = Vector2(355, -282)
 scale = Vector2(1.16, 1)
 
