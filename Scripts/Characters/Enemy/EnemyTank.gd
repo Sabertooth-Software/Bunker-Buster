@@ -16,7 +16,7 @@ func _ready():
 	add_to_group(ShotCounter.tank_group)
 	if target == null:
 		var player_tank: Node = get_tree().get_current_scene().get_node("PlayerTank")
-		if player_tank is PlayerTank:
+		if player_tank and player_tank is PlayerTank:
 			target = player_tank
 			_setup_timer()
 	if points:

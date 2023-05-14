@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr30nrvngl6m8"]
+[gd_scene load_steps=12 format=3 uid="uid://cr30nrvngl6m8"]
 
 [ext_resource type="TileSet" uid="uid://c6cyh055mrm6s" path="res://Assets/TileMaps/GolfTiles.tres" id="1_p7pg4"]
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="2_cxxip"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bqmrrq74v6qiu" path="res://Assets/Objects/Water.tscn" id="7_nmpfx"]
 [ext_resource type="Script" path="res://Scripts/Objects/Hole.gd" id="9_5nuks"]
 [ext_resource type="PackedScene" uid="uid://dk0vl7gvy64nc" path="res://Scenes/Components/GUI.tscn" id="9_gh2k5"]
+[ext_resource type="PackedScene" uid="uid://ca571cslm0iuh" path="res://Scenes/Components/game_camera.tscn" id="10_0c2gx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ml2sx"]
 radius = 8.55482
@@ -66,8 +67,6 @@ bullet = ExtResource("4_c7qjk")
 Speed = 70.0
 Bullet_Speed = 1.0
 
-[node name="Camera2D" type="Camera2D" parent="PlayerTank"]
-
 [node name="RedTank" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_kskr8")]
 position = Vector2(96, 729)
 target = NodePath("")
@@ -116,3 +115,5 @@ script = ExtResource("9_5nuks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_ml2sx")
+
+[node name="Game camera" parent="." instance=ExtResource("10_0c2gx")]
