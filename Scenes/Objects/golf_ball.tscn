@@ -12,14 +12,14 @@ radius = 41.2689
 radius = 8.75
 
 [node name="GolfBall" type="RigidBody2D"]
-collision_layer = 2
+collision_layer = 66
 collision_mask = 11
 gravity_scale = 2.66454e-15
 continuous_cd = 1
 script = ExtResource("1_ka2a0")
 terrain_map = {
 1: 0.85,
-2: 0.9,
+2: 0.94,
 3: 0.99
 }
 

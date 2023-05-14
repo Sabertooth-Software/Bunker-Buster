@@ -1,0 +1,373 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk0vl7gvy64nc"]
+
+[ext_resource type="Script" path="res://CounterUI.gd" id="1_65i07"]
+[ext_resource type="Script" path="res://Scenes/Components/EndResults.gd" id="2_ellq3"]
+[ext_resource type="Script" path="res://Scenes/Components/button_next_level.gd" id="3_jbwf2"]
+[ext_resource type="Script" path="res://Scenes/Components/StartUIBox.gd" id="4_24aab"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ikrlt"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ShotCount" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 400.0
+offset_top = 204.0
+offset_right = 528.0
+offset_bottom = 300.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_65i07")
+
+[node name="shots" type="RichTextLabel" parent="UI/ShotCount"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_right = 42.0
+offset_bottom = 32.0
+grow_horizontal = 2
+text = "Shots/Par"
+
+[node name="counter" type="RichTextLabel" parent="UI/ShotCount"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -32.0
+offset_right = 96.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+scroll_active = false
+
+[node name="EndLevelResults" type="Control" parent="." node_paths=PackedStringArray("score_container", "holes", "card", "total_score")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -130.0
+offset_right = 112.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("2_ellq3")
+score_container = NodePath("Scorecard/Holes2/VBoxContainer")
+holes = NodePath("Scorecard/Holes/VBoxContainer")
+card = NodePath("Scorecard")
+total_score = NodePath("Scorecard/TotalScore/VBoxContainer/Label")
+
+[node name="Scorecard" type="Control" parent="EndLevelResults"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndLevelResults/Scorecard"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.5
+offset_right = 42.5
+offset_bottom = 46.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Score"
+scroll_active = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="EndLevelResults/Scorecard"]
+modulate = Color(1, 1, 1, 0.14902)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_ikrlt")
+
+[node name="Holes" type="Control" parent="EndLevelResults/Scorecard"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -52.0
+offset_right = 80.0
+offset_bottom = 28.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndLevelResults/Scorecard/Holes"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 40.0
+offset_bottom = 52.0
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="EndLevelResults/Scorecard/Holes/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Hole 1:"
+
+[node name="Label2" type="Label" parent="EndLevelResults/Scorecard/Holes/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Hole 2:"
+
+[node name="Label3" type="Label" parent="EndLevelResults/Scorecard/Holes/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Hole 3:"
+
+[node name="Label4" type="Label" parent="EndLevelResults/Scorecard/Holes/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Hole 4:"
+
+[node name="Holes2" type="Control" parent="EndLevelResults/Scorecard"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -84.0
+offset_bottom = 60.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndLevelResults/Scorecard/Holes2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -60.0
+offset_right = 48.0
+offset_bottom = 52.0
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Hole 1" type="Label" parent="EndLevelResults/Scorecard/Holes2/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "0"
+
+[node name="Hole 2" type="Label" parent="EndLevelResults/Scorecard/Holes2/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "0"
+
+[node name="Hole 3" type="Label" parent="EndLevelResults/Scorecard/Holes2/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "0"
+
+[node name="Hole 4" type="Label" parent="EndLevelResults/Scorecard/Holes2/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "0"
+
+[node name="TotalScore" type="Control" parent="EndLevelResults/Scorecard"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -86.0
+offset_right = 24.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndLevelResults/Scorecard/TotalScore"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="EndLevelResults/Scorecard/TotalScore/VBoxContainer"]
+layout_mode = 2
+text = "Total Score:"
+
+[node name="Next Level" type="Button" parent="EndLevelResults/Scorecard"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -38.0
+offset_right = 64.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Next Level"
+script = ExtResource("3_jbwf2")
+
+[node name="LevelStart" type="Control" parent="." node_paths=PackedStringArray("level_name", "par")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -79.0
+offset_right = 112.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("4_24aab")
+level_name = NodePath("Scorecard/LevelName")
+par = NodePath("Scorecard/RightText/VBoxContainer/Hole 1")
+
+[node name="Scorecard" type="Control" parent="LevelStart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelName" type="RichTextLabel" parent="LevelStart/Scorecard"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_right = 59.0
+offset_bottom = 46.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Hole 1"
+scroll_active = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="LevelStart/Scorecard"]
+modulate = Color(1, 1, 1, 0.14902)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_ikrlt")
+
+[node name="LeftText" type="Control" parent="LevelStart/Scorecard"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -36.0
+offset_right = 112.0
+offset_bottom = 44.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelStart/Scorecard/LeftText"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 40.0
+offset_bottom = 52.0
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="LevelStart/Scorecard/LeftText/VBoxContainer"]
+layout_mode = 2
+text = "Par:"
+
+[node name="RightText" type="Control" parent="LevelStart/Scorecard"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -68.0
+offset_right = -32.0
+offset_bottom = 76.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelStart/Scorecard/RightText"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -60.0
+offset_right = 48.0
+offset_bottom = 52.0
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Hole 1" type="Label" parent="LevelStart/Scorecard/RightText/VBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Start Level" type="Button" parent="LevelStart/Scorecard"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -50.0
+offset_right = 40.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Fight!"
+
+[connection signal="pressed" from="EndLevelResults/Scorecard/Next Level" to="EndLevelResults/Scorecard/Next Level" method="_on_pressed"]
+[connection signal="pressed" from="LevelStart/Scorecard/Start Level" to="LevelStart" method="_on_start_level_pressed"]

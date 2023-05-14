@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr30nrvngl6m8"]
+[gd_scene load_steps=11 format=3 uid="uid://cr30nrvngl6m8"]
 
 [ext_resource type="TileSet" uid="uid://c6cyh055mrm6s" path="res://Assets/TileMaps/GolfTiles.tres" id="1_p7pg4"]
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="2_cxxip"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://hh271eak8f3q" path="res://Scenes/Characters/Enemies/red_tank.tscn" id="5_kskr8"]
 [ext_resource type="PackedScene" uid="uid://7sckx3547nbi" path="res://Scenes/Objects/golf_ball.tscn" id="6_mpryr"]
 [ext_resource type="PackedScene" uid="uid://bqmrrq74v6qiu" path="res://Assets/Objects/Water.tscn" id="7_nmpfx"]
+[ext_resource type="Script" path="res://Scripts/Objects/Hole.gd" id="9_5nuks"]
+[ext_resource type="PackedScene" uid="uid://dk0vl7gvy64nc" path="res://Scenes/Components/GUI.tscn" id="9_gh2k5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ml2sx"]
+radius = 8.55482
 
 [node name="Node2D" type="Node2D"]
 
@@ -66,17 +71,20 @@ Bullet_Speed = 1.0
 [node name="RedTank" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_kskr8")]
 position = Vector2(96, 729)
 target = NodePath("")
+points = Array[Vector2]([])
 
 [node name="RedTank2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_kskr8")]
 position = Vector2(341, 246)
 target = NodePath("")
+points = Array[Vector2]([])
 
 [node name="RedTank3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_kskr8")]
 position = Vector2(388, 686)
 target = NodePath("")
+points = Array[Vector2]([])
 
 [node name="GolfBall" parent="." instance=ExtResource("6_mpryr")]
-position = Vector2(-265, 274)
+position = Vector2(442, 288)
 
 [node name="Water" type="Node2D" parent="."]
 
@@ -97,3 +105,14 @@ position = Vector2(336, 704)
 
 [node name="water6" parent="Water" instance=ExtResource("7_nmpfx")]
 position = Vector2(336, 832)
+
+[node name="GUI" parent="." instance=ExtResource("9_gh2k5")]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(566.576, 253.512)
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("9_5nuks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ml2sx")

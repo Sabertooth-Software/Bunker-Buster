@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfp2wtw5do8m7"]
+[gd_scene load_steps=10 format=3 uid="uid://dfp2wtw5do8m7"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Tank.gd" id="1_lnctx"]
 [ext_resource type="PackedScene" uid="uid://dhm8qd71af8hh" path="res://Scenes/Components/shooting_component.tscn" id="2_1hq3u"]
@@ -10,6 +10,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sin31"]
 size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_no6m2"]
+size = Vector2(35, 35)
 
 [node name="Tank" type="CharacterBody2D"]
 collision_layer = 16
@@ -42,5 +45,12 @@ terrain_map = {
 3: ExtResource("6_5xvq7")
 }
 
-[connection signal="terrain_changed" from="TerrainDetector" to="." method="_on_terrain_detector_terrain_changed"]
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_no6m2")
+
 [connection signal="terrain_changed" from="TerrainDetector" to="TerrainParticleSpawner" method="_on_terrain_detector_terrain_changed"]

@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="Go-godot-jam-4"
-run/main_scene="res://Scenes/Levels/GolfTiles.tscn"
+run/main_scene="res://Scenes/Levels/Hole 1.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 ShotCounter="*res://Scripts/Components/ShotCounter.gd"
+SceneManager="*res://Scripts/Components/SceneManager.gd"
+GameModeManager="*res://Scripts/game_mode_manager.gd"
 
 [editor_plugins]
 
@@ -73,6 +75,7 @@ debug_finishlevel={
 2d_physics/layer_4="Enemy"
 2d_physics/layer_5="Projectile"
 2d_physics/layer_6="Terrain"
+2d_physics/layer_7="Ball"
 
 [rendering]
 

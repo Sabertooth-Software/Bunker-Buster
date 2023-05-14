@@ -1,33 +1,38 @@
 extends Node2D
 
-@onready var shots = 0
-@onready var total_score = 0
-@onready var _par = 4
+var scores:Dictionary
 
-signal update_ui(score:int)
-# Called when the node enters the scene tree for the first time.
+signal shoot()
+signal score_update(score: int)
+signal tank_destroyed()
+
+var tank_group: String = "Tanks"
+
 func _ready():
-	pass
-
-func _update_ui():
-	update_ui.emit(shots)
+	shoot.connect(_on_shoot)
+	tank_destroyed.connect(_on_tank_destroy)
 	
-func set_par(par:int): #set par when level loads
-	_par = par
-
-func increase_shots():
-	shots = shots+1
-	print("Shots: " + str(shots))
-	_update_ui()
-
-func finish_level():
-	print("Hole Par: " +str(_par))
-	total_score = (total_score +(shots-_par))
-	print("Current score is "+str(total_score))
-
-func _on_golf_ball_increase_shot():
-	increase_shots()
-
-
-func _on_player_tank_increase_shot():
-	increase_shots()
+func _on_shoot():
+	var current_scene = get_tree().get_current_scene().scene_file_path
+	if scores.get(current_scene) != null:
+		scores[current_scene] += 1
+	else:
+		scores[current_scene] = 1
+	score_update.emit(scores[current_scene])
+	
+func _on_tank_destroy():
+	var groups: Array = get_tree().get_nodes_in_group(tank_group)
+	print(groups)
+	if groups.size() == 0:
+		GameModeManager.change_mode.emit(GameModeManager.Mode.GOLF)
+	
+func get_current_score() -> int:
+	var current_scene = get_tree().get_current_scene().scene_file_path
+	return scores[current_scene]
+	
+func get_total_score() -> int:
+	var total_score: int = 0
+	for value in scores:
+		total_score += scores[value]
+	return total_score
+	
