@@ -14,3 +14,6 @@ func setup(_position: Vector2, _velocity: Vector2, _scene: Node, _initiator: Nod
 
 func _on_timer_timeout():
 	queue_free()
+
+func _on_body_entered(body):
+	queue_free()
