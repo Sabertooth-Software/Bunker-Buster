@@ -3,7 +3,7 @@ extends Tank
 @export var bullet: PackedScene
 @export var target: Node2D
 @export var timeout: float = 1.5
-@export var points: Array
+@export var points: Array[Vector2]
 
 @onready var timer: Timer = $Timer
 

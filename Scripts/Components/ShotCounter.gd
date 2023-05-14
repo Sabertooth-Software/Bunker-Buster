@@ -22,8 +22,10 @@ func _on_shoot():
 	score_update.emit(scores[current_scene])
 	
 func _on_tank_destroy():
-	var groups = get_tree().get_nodes_in_group(tank_group)
+	var groups: Array = get_tree().get_nodes_in_group(tank_group)
 	print(groups)
+	if groups.size() == 0:
+		GameModeManager.start_golf_mode.emit()
 	
 func get_current_score() -> int:
 	var current_scene = get_tree().get_current_scene().scene_file_path
