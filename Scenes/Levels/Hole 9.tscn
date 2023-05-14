@@ -50,7 +50,7 @@ layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array()
 layer_5/name = "Water"
 layer_5/enabled = true
-layer_5/modulate = Color(0.227451, 0.156863, 0.00392157, 1)
+layer_5/modulate = Color(0.160784, 0.160784, 0.992157, 1)
 layer_5/y_sort_enabled = false
 layer_5/y_sort_origin = 0
 layer_5/z_index = -5
@@ -97,6 +97,7 @@ position = Vector2(-140, -70)
 position = Vector2(-544, 672)
 
 [node name="Water" type="Node2D" parent="."]
+visible = false
 
 [node name="water" parent="Water" instance=ExtResource("9_ef247")]
 position = Vector2(144, -96)
