@@ -16,7 +16,7 @@ func _ready():
 		"res://Scenes/Levels/Hole 5.tscn": LevelData.new(5, 6),
 		"res://Scenes/Levels/Hole 6.tscn": LevelData.new(6, 6),
 		"res://Scenes/Levels/Hole 7.tscn": LevelData.new(7, 5),
-		"res://Scenes/Levels/Hole 8.tscn": LevelData.new(8, 11),
+		"res://Scenes/Levels/Hole 8.tscn": LevelData.new(8, 10),
 		"res://Scenes/Levels/Hole 9.tscn": LevelData.new(9, 11)
 	}
 	var current: String = get_tree().get_current_scene().scene_file_path
