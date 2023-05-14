@@ -89,8 +89,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -66.0
+offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="EndLevelResults/Scorecard"]
+modulate = Color(0, 0.105882, 0, 0.988235)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_ikrlt")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="EndLevelResults/Scorecard"]
 layout_mode = 1
@@ -104,16 +116,6 @@ grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 30
 text = "Score"
 scroll_active = false
-
-[node name="NinePatchRect" type="NinePatchRect" parent="EndLevelResults/Scorecard"]
-modulate = Color(1, 1, 1, 0.14902)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CanvasTexture_ikrlt")
 
 [node name="Holes" type="Control" parent="EndLevelResults/Scorecard"]
 layout_mode = 1
@@ -274,6 +276,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="NinePatchRect" type="NinePatchRect" parent="LevelStart/Scorecard"]
+modulate = Color(0, 0.105882, 0, 0.988235)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_ikrlt")
+
 [node name="LevelName" type="RichTextLabel" parent="LevelStart/Scorecard"]
 layout_mode = 1
 anchors_preset = 5
@@ -286,16 +298,6 @@ grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 30
 text = "Hole 1"
 scroll_active = false
-
-[node name="NinePatchRect" type="NinePatchRect" parent="LevelStart/Scorecard"]
-modulate = Color(1, 1, 1, 0.14902)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CanvasTexture_ikrlt")
 
 [node name="LeftText" type="Control" parent="LevelStart/Scorecard"]
 layout_mode = 1
