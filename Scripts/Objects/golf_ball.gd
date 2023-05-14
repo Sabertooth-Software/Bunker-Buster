@@ -17,6 +17,8 @@ var _proportion: float
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	terrain_detector.terrain_changed.connect(_on_terrain_chnaged)
+	GameModeManager.change_mode.connect(_on_change_mode)
+	visible = GameModeManager.get_current_mode() == GameModeManager.Mode.GOLF
 	_deccel = terrain_map[Terrain.Type.GRASS]
 
 func _process(_delta):
@@ -44,4 +46,6 @@ func _physics_process(_delta):
 func _on_terrain_chnaged(new_terrain: Terrain.Type):
 	_deccel = terrain_map[new_terrain]
 	
+func _on_change_mode(new_mode: GameModeManager.Mode):
+	visible = GameModeManager.get_current_mode() == GameModeManager.Mode.GOLF
 
