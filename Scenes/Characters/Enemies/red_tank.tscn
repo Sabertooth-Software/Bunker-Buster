@@ -10,7 +10,7 @@ collision_mask = 283
 script = ExtResource("1_hmcf7")
 bullet = ExtResource("3_6ux1k")
 timeout = 1.5
-points = [Vector2(477, -44), Vector2(722, -44)]
+points = Array[Vector2]([Vector2(477, -44), Vector2(722, -44)])
 Speed = 10.0
 Bullet_Speed = 1.0
 
