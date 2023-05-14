@@ -68,16 +68,19 @@ Speed = 70.0
 Bullet_Speed = 1.0
 
 [node name="RedTank" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_p6xgu")]
+z_index = 0
 position = Vector2(304, -208)
 target = NodePath("")
 points = Array[Vector2]([])
 
 [node name="RedTank2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_p6xgu")]
+z_index = 0
 position = Vector2(208, -96)
 target = NodePath("")
 points = Array[Vector2]([])
 
 [node name="RedTank3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_p6xgu")]
+z_index = 0
 position = Vector2(640, 32)
 target = NodePath("")
 points = Array[Vector2]([])

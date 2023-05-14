@@ -28,6 +28,7 @@ mesh = SubResource("SphereMesh_plxgq")
 [node name="GPUParticles2D" parent="." instance=ExtResource("2_qjgw2")]
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 one_shot = true
 autostart = true
 

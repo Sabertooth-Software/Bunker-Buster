@@ -9,8 +9,9 @@ class_name TerrainParticleSpawner
 
 var current_turrain: Terrain.Type = Terrain.Type.GRASS
 
-func _physics_process(_delta):
-	pass
+func _physics_process(delta):
+	if GameModeManager.get_current_mode() == GameModeManager.Mode.TANKS:
+		spawn_particles()
 
 func spawn_particles():
 	var particle: GPUParticles2D = terrain_map[current_turrain].instantiate()
