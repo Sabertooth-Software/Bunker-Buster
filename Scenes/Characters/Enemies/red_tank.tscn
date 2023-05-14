@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://hh271eak8f3q"]
+[gd_scene load_steps=8 format=3 uid="uid://hh271eak8f3q"]
 
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="1_8d7b4"]
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyTank.gd" id="1_hmcf7"]
 [ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/Bullet.tscn" id="3_6ux1k"]
 [ext_resource type="AudioStream" uid="uid://c65wfjflw6nvi" path="res://Audio/tank-destroyed.wav" id="4_cx1xp"]
+[ext_resource type="Texture2D" uid="uid://hxo44yej3w4t" path="res://Assets/TankSprite/red-tank-base.png" id="4_xqkdc"]
+[ext_resource type="Texture2D" uid="uid://8u34nnyktdlt" path="res://Assets/TankSprite/red-tank-canon.png" id="5_yjvth"]
 
 [sub_resource type="Gradient" id="Gradient_d0vl3"]
 colors = PackedColorArray(0.23212, 0.23212, 0.23212, 1, 0.419813, 0.419813, 0.419813, 1)
@@ -18,7 +20,14 @@ points = Array[Vector2]([Vector2(477, -44), Vector2(722, -44)])
 Speed = 10.0
 Bullet_Speed = 1.0
 
+[node name="Body" parent="." index="1"]
+texture = ExtResource("4_xqkdc")
+
+[node name="Canon" parent="." index="2"]
+texture = ExtResource("5_yjvth")
+
 [node name="Timer" type="Timer" parent="." index="4"]
+wait_time = 3.0
 
 [node name="tankDestroyed" type="AudioStreamPlayer" parent="." index="7"]
 stream = ExtResource("4_cx1xp")

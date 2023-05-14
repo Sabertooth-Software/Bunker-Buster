@@ -28,13 +28,14 @@ scale = Vector2(3, 3)
 mesh = SubResource("SphereMesh_plxgq")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 autostart = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 scale = Vector2(5, 5)
 amount = 30
+lifetime = 0.3
 gravity = Vector2(2.08165e-12, 2.08165e-12)
 initial_velocity_min = 10.0
 initial_velocity_max = 15.0
