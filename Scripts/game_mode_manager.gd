@@ -17,3 +17,4 @@ func _on_change_mode(new_mode: Mode):
 	
 func get_current_mode() -> Mode:
 	return current_mode
+	

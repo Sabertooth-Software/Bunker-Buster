@@ -5,6 +5,7 @@ class_name PlayerTank
 
 func _ready():
 	super._ready()
+	add_to_group(ShotCounter.tank_group)
 
 func _process(_delta):
 	if GameModeManager.get_current_mode() == GameModeManager.Mode.TANKS:

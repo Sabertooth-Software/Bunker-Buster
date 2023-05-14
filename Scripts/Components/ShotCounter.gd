@@ -23,7 +23,7 @@ func _on_shoot():
 func _on_tank_destroy():
 	var groups: Array = get_tree().get_nodes_in_group(tank_group)
 	print(groups)
-	if groups.size() == 0:
+	if groups.size() <= 1:
 		GameModeManager.change_mode.emit(GameModeManager.Mode.GOLF)
 	
 func get_current_score() -> int:
