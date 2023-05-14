@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://47ssmg3sciex"]
+[gd_scene load_steps=10 format=3 uid="uid://47ssmg3sciex"]
 
 [ext_resource type="TileSet" uid="uid://c6cyh055mrm6s" path="res://Assets/TileMaps/GolfTiles.tres" id="1_xapo6"]
 [ext_resource type="PackedScene" uid="uid://dfp2wtw5do8m7" path="res://Scenes/Characters/tank.tscn" id="2_psps8"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bfc7fafn5cbnj" path="res://Scenes/Bullet.tscn" id="4_3cdn0"]
 [ext_resource type="PackedScene" uid="uid://hh271eak8f3q" path="res://Scenes/Characters/Enemies/red_tank.tscn" id="5_ahov5"]
 [ext_resource type="PackedScene" uid="uid://7sckx3547nbi" path="res://Scenes/Objects/golf_ball.tscn" id="6_x63pp"]
-[ext_resource type="PackedScene" uid="uid://bxv4iggssnkxr" path="res://Scenes/Components/LevelData.tscn" id="7_m8pjt"]
 [ext_resource type="PackedScene" uid="uid://dk0vl7gvy64nc" path="res://Scenes/Components/GUI.tscn" id="8_8bj48"]
 [ext_resource type="Script" path="res://Scripts/Objects/Hole.gd" id="9_i26ia"]
 
@@ -74,11 +73,6 @@ target = NodePath("")
 
 [node name="GolfBall" parent="." instance=ExtResource("6_x63pp")]
 position = Vector2(630, -136)
-
-[node name="LevelData" parent="." instance=ExtResource("7_m8pjt")]
-par = 3
-current_level = "Hole 1"
-next_level = "Hole 2"
 
 [node name="GUI" parent="." instance=ExtResource("8_8bj48")]
 
