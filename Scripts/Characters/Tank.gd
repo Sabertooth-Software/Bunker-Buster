@@ -31,7 +31,7 @@ func look(point: Vector2):
 	canon.rotate(PI/2)
 	
 func _on_hit(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int):
-	if body is Bullet and self not in body.get_collision_exceptions():
-		body.queue_free()
+	if _body is Bullet and self not in _body.get_collision_exceptions():
+		_body.queue_free()
 		print("ahh")
 
