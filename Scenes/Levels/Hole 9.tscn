@@ -90,7 +90,6 @@ points = Array[Vector2]([Vector2(800, -96), Vector2(800, -336)])
 position = Vector2(-140, -70)
 
 [node name="GUI" parent="." instance=ExtResource("7_irq1g")]
-visible = false
 
 [node name="Hole" parent="." instance=ExtResource("8_sa501")]
 position = Vector2(-544, 672)
