@@ -3,6 +3,7 @@ class_name Tank
 
 @export var Speed: float = 1000
 @export var Bullet_Speed: float = 10.0
+@export var explosion: PackedScene
 
 @onready var canon: Node2D = $Canon
 @onready var body: Node2D = $Body
