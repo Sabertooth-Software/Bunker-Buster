@@ -13,6 +13,7 @@ var _start_position: Vector2
 var _shoot_vector: Vector2
 var _deccel: float
 var _proportion: float
+var _putting: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,19 +25,21 @@ func _ready():
 func _process(_delta):
 	if GameModeManager.get_current_mode() == GameModeManager.Mode.GOLF and linear_velocity.length() < 5:
 		if Input.is_action_just_pressed("putt"):
+			_putting = true
 			arrow.visible = true
 			_start_position = get_global_mouse_position()
-		if Input.is_action_pressed("putt"):
+		if Input.is_action_pressed("putt") and _putting:
 			_shoot_vector = _start_position - get_global_mouse_position()
 			_proportion = clampf(_shoot_vector.length()/max_shot_power, 0, 1)
 			arrow.scale.y = _proportion * .75
 			arrow.global_rotation = _shoot_vector.normalized().angle() + (PI/2)
-		if Input.is_action_just_released("putt"):
+		if Input.is_action_just_released("putt") and _putting:
 			arrow.visible = false
 			_shoot_vector = _shoot_vector.normalized() * speed_modifier * _proportion
 			apply_central_impulse(_shoot_vector)
 			arrow.scale.y = 0
 			ShotCounter.shoot.emit()
+			_putting = false
 		
 func _physics_process(_delta):
 	var slow_vector: Vector2 = lerp(linear_velocity, Vector2.ZERO, _deccel) * -1
