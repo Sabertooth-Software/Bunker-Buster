@@ -31,9 +31,12 @@ func select_level(level_number: int):
 	
 func _set_level(level_number: int):
 	GameModeManager.change_mode.emit(GameModeManager.Mode.TANKS)
-	var new_level: String = "res://Scenes/Levels/Hole " + str(level_number) + ".tscn"
-	current_level = level_data[new_level]
-	get_tree().change_scene_to_file(new_level)
+	if level_number>9:
+		return_to_title()
+	else:
+		var new_level: String = "res://Scenes/Levels/Hole " + str(level_number) + ".tscn"
+		current_level = level_data[new_level]
+		get_tree().change_scene_to_file(new_level)
 	
 func get_level_data() -> LevelData:
 	var current_scene = get_tree().get_current_scene().scene_file_path
