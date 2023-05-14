@@ -80,8 +80,6 @@ position = Vector2(1, 151)
 
 [node name="GolfBall" parent="." instance=ExtResource("6_x63pp")]
 position = Vector2(-249, 297)
-max_shot_power = null
-speed_modifier = null
 
 [node name="GUI" parent="." instance=ExtResource("8_8bj48")]
 

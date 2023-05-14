@@ -88,8 +88,6 @@ points = Array[Vector2]([Vector2(800, -96), Vector2(800, -336)])
 
 [node name="GolfBall" parent="." instance=ExtResource("6_x3jpw")]
 position = Vector2(-140, -70)
-max_shot_power = null
-speed_modifier = null
 
 [node name="GUI" parent="." instance=ExtResource("7_irq1g")]
 visible = false

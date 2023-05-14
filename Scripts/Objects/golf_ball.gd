@@ -47,6 +47,9 @@ func _process(_delta):
 func _physics_process(_delta):
 	var slow_vector: Vector2 = lerp(linear_velocity, Vector2.ZERO, _deccel) * -1
 	apply_central_impulse(slow_vector)
+	if terrain_detector.is_on_water:
+		linear_velocity = Vector2.ZERO
+		global_position = _start_position
 
 
 func _on_terrain_chnaged(new_terrain: Terrain.Type):
