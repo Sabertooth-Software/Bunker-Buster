@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfc7fafn5cbnj"]
+[gd_scene load_steps=5 format=3 uid="uid://bfc7fafn5cbnj"]
 
 [ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_6j12e"]
 
@@ -8,6 +8,10 @@ radius = 3.0
 [sub_resource type="SphereMesh" id="SphereMesh_plxgq"]
 radius = 1.0
 height = 2.0
+
+[sub_resource type="Gradient" id="Gradient_allqd"]
+offsets = PackedFloat32Array(0, 0.572519, 1)
+colors = PackedColorArray(0.631373, 0, 0, 1, 0.843137, 0.223529, 0.0117647, 1, 1, 1, 1, 1)
 
 [node name="Bullet" type="RigidBody2D"]
 collision_layer = 16
@@ -27,6 +31,16 @@ mesh = SubResource("SphereMesh_plxgq")
 wait_time = 2.0
 one_shot = true
 autostart = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2(5, 5)
+amount = 30
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 10.0
+initial_velocity_max = 15.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_initial_ramp = SubResource("Gradient_allqd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
