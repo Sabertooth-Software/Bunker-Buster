@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://duuorj8wkoq34"]
+[gd_scene load_steps=13 format=3 uid="uid://duuorj8wkoq34"]
 
 [ext_resource type="Texture2D" uid="uid://7cevmelgguli" path="res://Assets/ArrowSprite.png" id="1_2a20n"]
 [ext_resource type="TileSet" uid="uid://c6cyh055mrm6s" path="res://Assets/TileMaps/GolfTiles.tres" id="1_fd6su"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bqmrrq74v6qiu" path="res://Assets/Objects/Water.tscn" id="4_4u662"]
 [ext_resource type="Script" path="res://Scenes/Components/button_next_level.gd" id="4_ir7ml"]
 [ext_resource type="Script" path="res://Scenes/Components/button_howto.gd" id="5_6s557"]
+[ext_resource type="Texture2D" uid="uid://ccdg4qihovc7q" path="res://Assets/TankSprite/tank-base.png" id="7_rdfqo"]
+[ext_resource type="Texture2D" uid="uid://bmeavv0i8viaf" path="res://Assets/TankSprite/tank-cannon.png" id="8_b7h7f"]
+[ext_resource type="PackedScene" uid="uid://dhm8qd71af8hh" path="res://Scenes/Components/shooting_component.tscn" id="9_j0cp2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u648x"]
 radius = 8.75
@@ -77,7 +80,7 @@ layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array(-786413, 131073, 0)
 layer_5/name = "Water"
 layer_5/enabled = true
-layer_5/modulate = Color(0.227451, 0.156863, 0.00392157, 1)
+layer_5/modulate = Color(0.160784, 0.160784, 0.992157, 1)
 layer_5/y_sort_enabled = false
 layer_5/y_sort_origin = 0
 layer_5/z_index = -5
@@ -254,9 +257,29 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="water" parent="." instance=ExtResource("4_4u662")]
+visible = false
 position = Vector2(-464, 423.5)
 scale = Vector2(1.09375, 1.03906)
 
-[connection signal="pressed" from="Menu/VFlowContainer/Button" to="Menu/VFlowContainer/Button" method="_on_pressed"]
+[node name="PlayerTank" type="CharacterBody2D" parent="."]
+z_index = 2
+position = Vector2(-417, 270)
+rotation = -1.309
+collision_layer = 2
+collision_mask = 31
+
+[node name="Body" type="Sprite2D" parent="PlayerTank"]
+texture = ExtResource("7_rdfqo")
+
+[node name="Canon" type="Sprite2D" parent="PlayerTank"]
+rotation = 2.87979
+texture = ExtResource("8_b7h7f")
+
+[node name="ShootingComponent" parent="PlayerTank/Canon" instance=ExtResource("9_j0cp2")]
+position = Vector2(2.08165e-12, -25)
+scale = Vector2(3.23088, 1.69783)
+
+[connection signal="pressed" from="Menu/VFlowContainer/Button" to="Menu/VFlowContainer/Button" method="_on_start_pressed"]
 [connection signal="pressed" from="Menu/VFlowContainer/Button2" to="Menu/VFlowContainer/Button2" method="_on_button_pressed"]
+[connection signal="pressed" from="Menu/VFlowContainer/Button3" to="Menu/VFlowContainer/Button" method="_on_quit_pressed"]
 [connection signal="pressed" from="UI/Control/Button" to="Menu/VFlowContainer/Button2" method="_on_button_pressed"]
