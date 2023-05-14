@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://4lqax865t6u0" path="res://Audio/Tank theme.wav" id="1_cme3l"]
 
 [node name="themeMusic" type="AudioStreamPlayer"]
+process_mode = 3
 stream = ExtResource("1_cme3l")
 volume_db = -10.0
 autoplay = true
