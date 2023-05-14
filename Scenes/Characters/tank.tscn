@@ -1,13 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfp2wtw5do8m7"]
+[gd_scene load_steps=8 format=3 uid="uid://dfp2wtw5do8m7"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Tank.gd" id="1_lnctx"]
 [ext_resource type="PackedScene" uid="uid://dhm8qd71af8hh" path="res://Scenes/Components/shooting_component.tscn" id="2_1hq3u"]
 [ext_resource type="Texture2D" uid="uid://ccdg4qihovc7q" path="res://Assets/TankSprite/tank-base.png" id="3_dotvh"]
 [ext_resource type="Texture2D" uid="uid://bmeavv0i8viaf" path="res://Assets/TankSprite/tank-cannon.png" id="4_8ty1j"]
 [ext_resource type="PackedScene" uid="uid://2dq276mqwnck" path="res://Scenes/Components/terrain_detector.tscn" id="4_w5nxv"]
-[ext_resource type="PackedScene" uid="uid://pcnyw7nwpaqa" path="res://Scenes/Components/TerrainParticleSpawner.tscn" id="5_wqme0"]
-[ext_resource type="PackedScene" uid="uid://4ea6nld8exji" path="res://Assets/Particles/hit_sand.tscn" id="6_5xvq7"]
-[ext_resource type="PackedScene" uid="uid://oolwahoot7m1" path="res://Assets/Particles/hole.tscn" id="7_13mp1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sin31"]
 size = Vector2(32, 32)
@@ -30,15 +27,6 @@ debug_color = Color(0.0196078, 0.254902, 1, 0.419608)
 [node name="Body" type="Sprite2D" parent="."]
 texture = ExtResource("3_dotvh")
 
-[node name="TerrainParticleSpawner" parent="Body" node_paths=PackedStringArray("terrain_detector") instance=ExtResource("5_wqme0")]
-position = Vector2(2.08165e-12, 15)
-terrain_detector = NodePath("../../TerrainDetector")
-terrain_map = {
-1: ExtResource("6_5xvq7"),
-2: ExtResource("7_13mp1"),
-3: ExtResource("6_5xvq7")
-}
-
 [node name="Canon" type="Sprite2D" parent="."]
 texture = ExtResource("4_8ty1j")
 
@@ -55,5 +43,3 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_no6m2")
-
-[connection signal="terrain_changed" from="TerrainDetector" to="Body/TerrainParticleSpawner" method="_on_terrain_detector_terrain_changed"]
