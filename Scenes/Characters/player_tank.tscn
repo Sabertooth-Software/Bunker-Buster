@@ -11,3 +11,6 @@ script = ExtResource("1_yis1o")
 bullet = ExtResource("2_47anu")
 Speed = 70.0
 Bullet_Speed = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="." index="7"]
+visible = false

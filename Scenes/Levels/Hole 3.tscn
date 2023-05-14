@@ -86,6 +86,9 @@ points = Array[Vector2]([])
 [node name="GolfBall" parent="." instance=ExtResource("6_g4loe")]
 position = Vector2(565, 324)
 
+[node name="Camera2D2" type="Camera2D" parent="GolfBall"]
+position = Vector2(-5, -644)
+
 [node name="Water" type="Node2D" parent="."]
 
 [node name="water" parent="Water" instance=ExtResource("7_5fdf7")]

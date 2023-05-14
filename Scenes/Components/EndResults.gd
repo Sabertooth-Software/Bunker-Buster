@@ -12,6 +12,7 @@ func _ready():
 		label.text = "Hole " + str(level_number)
 		label.name = str(level_number)
 		holes.add_child(label)
+		
 		var score_label: Label = Label.new()
 		if ShotCounter.scores.get(level) != null:
 			score_label.text = str(ShotCounter.scores[level])

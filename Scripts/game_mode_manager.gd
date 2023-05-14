@@ -7,20 +7,13 @@ enum Mode {
 
 var current_mode: Mode = Mode.TANKS
 
-signal start_tank_mode()
-signal start_golf_mode()
+signal change_mode(new_mode: Mode)
 
 func _ready():
-	start_tank_mode.connect(_on_start_tank_mode)
-	start_golf_mode.connect(_on_start_golf_mode)
+	change_mode.connect(_on_change_mode)
 	
-func _on_start_tank_mode():
-	print("tanks")
-	current_mode = Mode.TANKS
-	
-func _on_start_golf_mode():
-	print("golf")
-	current_mode = Mode.GOLF
+func _on_change_mode(new_mode: Mode):
+	current_mode = new_mode
 	
 func get_current_mode() -> Mode:
 	return current_mode

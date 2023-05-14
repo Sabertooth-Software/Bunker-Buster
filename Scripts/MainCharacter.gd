@@ -3,6 +3,12 @@ class_name PlayerTank
 
 @export var bullet: PackedScene
 
+@onready var camera: Camera2D = $Camera2D
+
+func _ready():
+	super._ready()
+	#GameModeManager.change_mode.connect(_on_change_mode)
+
 func _process(_delta):
 	if GameModeManager.get_current_mode() == GameModeManager.Mode.TANKS:
 		if Input.is_action_just_pressed("shoot"):
@@ -19,3 +25,7 @@ func _physics_process(_delta):
 		var moving_vector: Vector2 = Input.get_vector("left", "right", "up", "down")
 		if moving_vector:
 			super.move(moving_vector)
+			
+
+#func _on_change_mode(new_mode: GameModeManager.Mode):
+	#camera.visible = new_mode == GameModeManager.Mode.TANKS

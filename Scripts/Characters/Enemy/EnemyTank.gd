@@ -20,14 +20,14 @@ func _ready():
 			target = player_tank
 			_setup_timer()
 	if points:
-		next_point = points[0]
+		next_point = points[0].global_position
 
 func _get_next_point():
 	if point_index >= points.size() - 1:
 		point_index = 0
 	else :
 		point_index += 1
-	next_point = points[point_index]
+	next_point = points[point_index].global_position
 
 func _handle_movement():
 	if next_point==null:
@@ -39,9 +39,9 @@ func _handle_movement():
 	else:
 		_get_next_point()
 
-func _on_hit(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int):
-	super._on_hit(body_rid, body, body_shape_index, local_shape_index)
-	if body is Bullet and self not in body.get_collision_exceptions():
+func _on_hit(body_rid: RID, _body: Node2D, body_shape_index: int, local_shape_index: int):
+	super._on_hit(body_rid, _body, body_shape_index, local_shape_index)
+	if _body is Bullet and self not in _body.get_collision_exceptions():
 		remove_from_group(ShotCounter.tank_group)
 		ShotCounter.tank_destroyed.emit()
 		# jank as hell

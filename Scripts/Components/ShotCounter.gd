@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var total_score = 0
 var scores:Dictionary
 
 signal shoot()
@@ -25,7 +24,7 @@ func _on_tank_destroy():
 	var groups: Array = get_tree().get_nodes_in_group(tank_group)
 	print(groups)
 	if groups.size() == 0:
-		GameModeManager.start_golf_mode.emit()
+		GameModeManager.change_mode.emit(GameModeManager.Mode.GOLF)
 	
 func get_current_score() -> int:
 	var current_scene = get_tree().get_current_scene().scene_file_path

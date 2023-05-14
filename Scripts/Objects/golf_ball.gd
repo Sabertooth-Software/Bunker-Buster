@@ -43,3 +43,5 @@ func _physics_process(_delta):
 
 func _on_terrain_chnaged(new_terrain: Terrain.Type):
 	_deccel = terrain_map[new_terrain]
+	
+

@@ -71,6 +71,12 @@ Bullet_Speed = 1.0
 position = Vector2(141, -44)
 target = NodePath("")
 
+[node name="Node2D2" type="Node2D" parent="RedTank"]
+position = Vector2(-141, 44)
+
+[node name="Node2D" type="Node2D" parent="RedTank"]
+position = Vector2(1, 151)
+
 [node name="GolfBall" parent="." instance=ExtResource("6_x63pp")]
 position = Vector2(630, -136)
 
