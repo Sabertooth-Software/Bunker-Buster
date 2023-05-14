@@ -3,11 +3,8 @@ class_name PlayerTank
 
 @export var bullet: PackedScene
 
-@onready var camera: Camera2D = $Camera2D
-
 func _ready():
 	super._ready()
-	#GameModeManager.change_mode.connect(_on_change_mode)
 
 func _process(_delta):
 	if GameModeManager.get_current_mode() == GameModeManager.Mode.TANKS:
@@ -26,6 +23,3 @@ func _physics_process(_delta):
 		if moving_vector:
 			super.move(moving_vector)
 			
-
-#func _on_change_mode(new_mode: GameModeManager.Mode):
-	#camera.visible = new_mode == GameModeManager.Mode.TANKS
