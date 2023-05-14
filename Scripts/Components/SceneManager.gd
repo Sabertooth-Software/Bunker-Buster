@@ -9,14 +9,14 @@ signal level_complete()
 
 func _ready():
 	level_data = {
-		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(1, 3),
-		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(2, 5),
-		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(3, 8),
-		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(4, 6),
-		"res://Scenes/Levels/Hole 5.tscn": LevelData.new(5, 6),
-		"res://Scenes/Levels/Hole 6.tscn": LevelData.new(6, 6),
-		"res://Scenes/Levels/Hole 7.tscn": LevelData.new(7, 5),
-		"res://Scenes/Levels/Hole 8.tscn": LevelData.new(8, 10),
+		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(1, 5),
+		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(2, 8),
+		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(3, 10),
+		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(4, 7),
+		"res://Scenes/Levels/Hole 5.tscn": LevelData.new(5, 7),
+		"res://Scenes/Levels/Hole 6.tscn": LevelData.new(6, 7),
+		"res://Scenes/Levels/Hole 7.tscn": LevelData.new(7, 8),
+		"res://Scenes/Levels/Hole 8.tscn": LevelData.new(8, 11),
 		"res://Scenes/Levels/Hole 9.tscn": LevelData.new(9, 11)
 	}
 	var current: String = get_tree().get_current_scene().scene_file_path

@@ -30,13 +30,19 @@ func get_current_score() -> int:
 	var current_scene = get_tree().get_current_scene().scene_file_path
 	return scores[current_scene]
 	
-func get_total_score() -> int:
+func get_total_score() -> String:
 	var total_score: int = 0
 	var total_par: int = 0
 	for value in scores:
 		total_score += scores[value]
 	for element in scores:
 		total_par += SceneManager.level_data[element].par
-	print(total_par)
-	return (total_score-total_par)
+	var return_string: String
+	var display_score: int = total_score - total_par
+	if display_score <= 0:
+		return_string = str(display_score)
+	else:
+		return_string = "+" + str(display_score)
+		
+	return return_string
 	
