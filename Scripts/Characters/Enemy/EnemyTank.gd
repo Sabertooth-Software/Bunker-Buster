@@ -33,7 +33,7 @@ func _handle_movement():
 	if next_point==null:
 		_get_next_point()
 	var dist = global_position.distance_to(next_point)/100
-	if dist>.2:
+	if dist> .2:
 		move_vector = (next_point-global_position).normalized()
 		super.move(move_vector*5)
 	else:
@@ -41,8 +41,9 @@ func _handle_movement():
 
 func _on_hit(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int):
 	super._on_hit(body_rid, body, body_shape_index, local_shape_index)
-	remove_from_group(ShotCounter.tank_group)
-	ShotCounter.tank_destroyed.emit()
+	if body is Bullet and self not in body.get_collision_exceptions():
+		remove_from_group(ShotCounter.tank_group)
+		ShotCounter.tank_destroyed.emit()
 
 func on_timeout():
 	assert(target != null, "Tried to shoot without target assigned to enemy tank")
@@ -52,7 +53,8 @@ func on_timeout():
 
 func _process(_delta):
 	super.look(target.global_position)
-	_handle_movement()
+	if points:
+		_handle_movement()
 
 func _setup_timer():
 	timer.timeout.connect(on_timeout)
