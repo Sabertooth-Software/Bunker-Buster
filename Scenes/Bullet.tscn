@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfc7fafn5cbnj"]
+[gd_scene load_steps=4 format=3 uid="uid://bfc7fafn5cbnj"]
 
 [ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_6j12e"]
-[ext_resource type="PackedScene" uid="uid://chd4eaqqfu7pv" path="res://Scenes/flame_trail.tscn" id="2_qjgw2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_72ywd"]
 radius = 3.0
@@ -23,8 +22,6 @@ shape = SubResource("CircleShape2D_72ywd")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 scale = Vector2(3, 3)
 mesh = SubResource("SphereMesh_plxgq")
-
-[node name="GPUParticles2D" parent="." instance=ExtResource("2_qjgw2")]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

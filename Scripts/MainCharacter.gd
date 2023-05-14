@@ -27,5 +27,5 @@ func _physics_process(_delta):
 
 func _on_hit(body_rid: RID, _body: Node2D, body_shape_index: int, local_shape_index: int):
 	super._on_hit(body_rid, _body, body_shape_index, local_shape_index)
-	if _body is Bullet and self not in _body.get_collision_exceptions():
-		ShotCounter.shoot.emit()
+	if _body is Bullet and self not in _body.get_collision_exceptions() and GameModeManager.get_current_mode() == GameModeManager.Mode.TANKS:
+			ShotCounter.shoot.emit()
