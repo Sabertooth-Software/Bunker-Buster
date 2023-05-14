@@ -44,6 +44,9 @@ func _on_hit(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_ind
 	if body is Bullet and self not in body.get_collision_exceptions():
 		remove_from_group(ShotCounter.tank_group)
 		ShotCounter.tank_destroyed.emit()
+		# jank as hell
+		timer.stop()
+		points = []
 
 func on_timeout():
 	assert(target != null, "Tried to shoot without target assigned to enemy tank")
