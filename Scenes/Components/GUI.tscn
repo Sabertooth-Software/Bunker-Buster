@@ -63,7 +63,7 @@ grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 50
 scroll_active = false
 
-[node name="EndLevelResults" type="Control" parent="." node_paths=PackedStringArray("score_container", "card", "total_score")]
+[node name="EndLevelResults" type="Control" parent="." node_paths=PackedStringArray("score_container", "holes", "card", "total_score")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,6 +79,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("2_ellq3")
 score_container = NodePath("Scorecard/Holes2/VBoxContainer")
+holes = NodePath("Scorecard/Holes/VBoxContainer")
 card = NodePath("Scorecard")
 total_score = NodePath("Scorecard/TotalScore/VBoxContainer/Label")
 
@@ -137,18 +138,22 @@ theme_override_constants/separation = 6
 alignment = 1
 
 [node name="Label" type="Label" parent="EndLevelResults/Scorecard/Holes/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Hole 1:"
 
 [node name="Label2" type="Label" parent="EndLevelResults/Scorecard/Holes/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Hole 2:"
 
 [node name="Label3" type="Label" parent="EndLevelResults/Scorecard/Holes/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Hole 3:"
 
 [node name="Label4" type="Label" parent="EndLevelResults/Scorecard/Holes/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Hole 4:"
 
@@ -179,18 +184,22 @@ theme_override_constants/separation = 6
 alignment = 1
 
 [node name="Hole 1" type="Label" parent="EndLevelResults/Scorecard/Holes2/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "0"
 
 [node name="Hole 2" type="Label" parent="EndLevelResults/Scorecard/Holes2/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "0"
 
 [node name="Hole 3" type="Label" parent="EndLevelResults/Scorecard/Holes2/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "0"
 
 [node name="Hole 4" type="Label" parent="EndLevelResults/Scorecard/Holes2/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "0"
 

@@ -17,3 +17,12 @@ func _on_shoot():
 		scores[current_scene] = 1
 	score_update.emit(scores[current_scene])
 	
+func get_current_score() -> int:
+	var current_scene = get_tree().get_current_scene().scene_file_path
+	return scores[current_scene]
+	
+func get_total_score() -> int:
+	var total_score: int = 0
+	for value in scores:
+		total_score += scores[value]
+	return total_score
