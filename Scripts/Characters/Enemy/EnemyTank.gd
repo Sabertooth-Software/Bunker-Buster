@@ -12,11 +12,14 @@ extends Tank
 var point_index: int = 0
 var next_point: Vector2
 var move_vector: Vector2
+var rng = RandomNumberGenerator.new()
 
 var _destroyed: bool = false
 
 func _ready():
 	super._ready()
+	
+	
 	add_to_group(ShotCounter.tank_group)
 	if target == null:
 		var player_tank: Node = get_tree().get_current_scene().get_node("PlayerTank")
@@ -55,6 +58,8 @@ func _on_hit(body_rid: RID, _body: Node2D, body_shape_index: int, local_shape_in
 		_destroyed = true
 
 func on_timeout():
+	var my_random_number = rng.randf_range(1.5, 2.5)
+	timer.wait_time = my_random_number
 	assert(target != null, "Tried to shoot without target assigned to enemy tank")
 	var shooting_vector: Vector2 = target.global_position - global_position
 	assert(bullet != null, "Tried to shoot without Bullet assigned to enemy tank")
@@ -69,5 +74,6 @@ func _process(_delta):
 
 func _setup_timer():
 	timer.timeout.connect(on_timeout)
-	timer.wait_time = timeout
+	var my_random_number = rng.randf_range(1.5, 2.5)
+	timer.wait_time = my_random_number
 	timer.start()

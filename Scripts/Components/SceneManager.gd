@@ -12,12 +12,12 @@ func _ready():
 		"res://Scenes/Levels/Hole 1.tscn": LevelData.new(1, 5),
 		"res://Scenes/Levels/Hole 2.tscn": LevelData.new(2, 8),
 		"res://Scenes/Levels/Hole 3.tscn": LevelData.new(3, 10),
-		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(4, 7),
-		"res://Scenes/Levels/Hole 5.tscn": LevelData.new(5, 7),
-		"res://Scenes/Levels/Hole 6.tscn": LevelData.new(6, 7),
+		"res://Scenes/Levels/Hole 4.tscn": LevelData.new(4, 11),
+		"res://Scenes/Levels/Hole 5.tscn": LevelData.new(5, 12),
+		"res://Scenes/Levels/Hole 6.tscn": LevelData.new(6, 8),
 		"res://Scenes/Levels/Hole 7.tscn": LevelData.new(7, 8),
 		"res://Scenes/Levels/Hole 8.tscn": LevelData.new(8, 11),
-		"res://Scenes/Levels/Hole 9.tscn": LevelData.new(9, 11)
+		"res://Scenes/Levels/Hole 9.tscn": LevelData.new(9, 17)
 	}
 	var current: String = get_tree().get_current_scene().scene_file_path
 	if level_data.get(current) != null:
